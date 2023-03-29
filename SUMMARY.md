@@ -1,6 +1,7 @@
 # Table of contents
 
-* [2d Puzzle Test](README.md)
+* [Some Generic Project](README.md)
+* [References](references.md)
 
 ## 1 Analysis <a href="#analysis" id="analysis"></a>
 
