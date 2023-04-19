@@ -19,3 +19,17 @@ Granic, I. (2013). Video Games Play May Provide Learning, Health, Social Benefit
 Nebel, S. and Ninaus, M. (2022). Does Playing Apart Really Bring Us Together? Investigating the Link Between Perceived Loneliness and the Use of Video Games During a Period of Social Distancing. _Frontiers in Psychology_, 13. doi:https://doi.org/10.3389/fpsyg.2022.683842
 
 Pallavicini, F., Pepe, A. and Mantovani, F. (2022). _The Effects of Playing Video Games on Stress, Anxiety, Depression, Loneliness, and Gaming Disorder during the Early Stages of the COVID-19 Pandemic_. \[online] ResearchGate. Available at: [https://www.researchgate.net/publication/360974058\_The\_Effects\_of\_Playing\_Video\_Games\_on\_Stress\_Anxiety\_Depression\_Loneliness\_and\_Gaming\_Disorder\_During\_the\_Early\_Stages\_of\_the\_COVID-19\_Pandemic\_PRISMA\_Systematic\_Review](https://www.researchgate.net/publication/360974058\_The\_Effects\_of\_Playing\_Video\_Games\_on\_Stress\_Anxiety\_Depression\_Loneliness\_and\_Gaming\_Disorder\_During\_the\_Early\_Stages\_of\_the\_COVID-19\_Pandemic\_PRISMA\_Systematic\_Review)
+
+Clement, J. (2021). _U.S. average age of video gamers 2019_. \[online] Statista. Available at: [https://www.statista.com/statistics/189582/age-of-us-video-game-players](https://www.statista.com/statistics/189582/age-of-us-video-game-players)
+
+Clement, J. (2022a). _Motivation for playing video games U.S. 2022_. \[online] Statista. Available at: [https://www.statista.com/statistics/239310/reasons-why-female-online-gamers-play-games-in-the-united-states](https://www.statista.com/statistics/239310/reasons-why-female-online-gamers-play-games-in-the-united-states)
+
+PEGI Public Site. (2017). _PEGI age ratings_. \[online] Available at: [https://pegi.info/page/pegi-age-ratings](https://pegi.info/page/pegi-age-ratings)
+
+PEGI Public Site. (2020). _How we rate games_. \[online] Available at: [https://pegi.info/page/how-we-rate-games](https://pegi.info/page/how-we-rate-games)
+
+Interactive Software Federation of Europe (2021). _Video games - a force for good_. \[online] Available at: [https://www.isfe.eu/wp-content/uploads/2022/08/FINAL-ISFE-EGDFKey-Facts-from-2021-about-Europe-video-games-sector-web.pdf](https://www.isfe.eu/wp-content/uploads/2022/08/FINAL-ISFE-EGDFKey-Facts-from-2021-about-Europe-video-games-sector-web.pdf)
+
+IGDB.com. (n.d.). _Age Rating for Minecraft_. \[online] Available at: [https://www.igdb.com/games/minecraft/age\_rating](https://www.igdb.com/games/minecraft/age\_rating)
+
+Capel, C.J. (2019). _Believe it or not, the average age of a Minecraft player is 24_. \[online] PCGamesN. Available at: [https://www.pcgamesn.com/minecraft/player-age](https://www.pcgamesn.com/minecraft/player-age)
