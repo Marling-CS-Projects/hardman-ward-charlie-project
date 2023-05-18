@@ -33,3 +33,33 @@ Interactive Software Federation of Europe (2021). _Video games - a force for goo
 IGDB.com. (n.d.). _Age Rating for Minecraft_. \[online] Available at: [https://www.igdb.com/games/minecraft/age\_rating](https://www.igdb.com/games/minecraft/age\_rating)
 
 Capel, C.J. (2019). _Believe it or not, the average age of a Minecraft player is 24_. \[online] PCGamesN. Available at: [https://www.pcgamesn.com/minecraft/player-age](https://www.pcgamesn.com/minecraft/player-age)
+
+Coldewey, D. (2011). _A Brief Explanation Of Why Minecraft Matters_. \[online] TechCrunch. Available at: [https://techcrunch.com/2011/01/15/a-brief-explanation-of-why-minecraft-matters](https://techcrunch.com/2011/01/15/a-brief-explanation-of-why-minecraft-matters)
+
+What is Minecraft? (2013). _Washington Post_. \[online] 14 Mar. Available at: [https://www.washingtonpost.com/lifestyle/kidspost/what-is-minecraft/2013/03/14/98c54514-8a57-11e2-a051-6810d606108d\_story.html](https://www.washingtonpost.com/lifestyle/kidspost/what-is-minecraft/2013/03/14/98c54514-8a57-11e2-a051-6810d606108d\_story.html)
+
+Minecraft.net. (2022). _Minecraft: Java & Bedrock Edition for PC_. \[online] Available at: [https://www.minecraft.net/en-us/store/minecraft-java-bedrock-edition-pc](https://www.minecraft.net/en-us/store/minecraft-java-bedrock-edition-pc)
+
+Attack of the Fanboy. (2013). _4J Studios confirmed to be handling Minecraft on the PS4_. \[online] Available at: [https://attackofthefanboy.com/news/4j-studios-confirmed-handling-minecraft-ps4](https://attackofthefanboy.com/news/4j-studios-confirmed-handling-minecraft-ps4)
+
+Craddock, R. (2018). _Minecraft: Wii U Edition Gets Its Last Ever Update, Developer 4J Reminisces Over Last Gen Consoles_. \[online] Nintendo Life. Available at: [https://www.nintendolife.com/news/2018/12/minecraft\_wii\_u\_edition\_gets\_its\_last\_ever\_update\_developer\_4j\_reminisces\_over\_last\_gen\_consoles](https://www.nintendolife.com/news/2018/12/minecraft\_wii\_u\_edition\_gets\_its\_last\_ever\_update\_developer\_4j\_reminisces\_over\_last\_gen\_consoles)
+
+Minecraft.net. (2019). _NEW NINTENDO 3DS UPDATE_. \[online] Available at: [https://www.minecraft.net/en-us/article/new-nintendo-3ds-update](https://www.minecraft.net/en-us/article/new-nintendo-3ds-update)
+
+Schramm, M. (2011). _Minecraft: Pocket Edition out on iOS today_. \[online] Engadget. Available at: [https://www.engadget.com/2011-11-16-minecraft-pocket-edition-out-on-ios-today.html](https://www.engadget.com/2011-11-16-minecraft-pocket-edition-out-on-ios-today.html)
+
+Davies, M. (2017). _Upgrade for Windows Phone players!_ \[online] Minecraft.net. Available at: [https://www.minecraft.net/en-us/article/upgrade-windows-phone-players](https://www.minecraft.net/en-us/article/upgrade-windows-phone-players)
+
+Upton, L. (2014). _Using Minecraft: Raspberry Pi Edition to get kids computing_. \[online] Raspberry Pi Foundation. Available at: [https://www.raspberrypi.org/blog/using-minecraft-raspberry-pi-edition-to-get-kids-computing](https://www.raspberrypi.org/blog/using-minecraft-raspberry-pi-edition-to-get-kids-computing)
+
+DigMinecraft. (2015). _Zombie in Minecraft_. \[online] Available at: [https://www.digminecraft.com/mobs/zombie.php](https://www.digminecraft.com/mobs/zombie.php)
+
+GameGuide. (2012). _Minecraft Zombies - Game Guide_. \[online] Available at: [https://www.game.guide/minecraft-zombies](https://www.game.guide/minecraft-zombies)
+
+Thakur, K. (2022). _All you need to know about the Minecraft Skeleton_. \[online] WePC. Available at: [https://www.wepc.com/gaming/minecraft/all-you-need-to-know-about-the-minecraft-skeleton](https://www.wepc.com/gaming/minecraft/all-you-need-to-know-about-the-minecraft-skeleton)
+
+IGN. (n.d.). _Skeleton - Minecraft Wiki Guide_. \[online] Available at: [https://www.ign.com/wikis/minecraft/Skeleton](https://www.ign.com/wikis/minecraft/Skeleton)
+
+Hillier, B. (2014). _Happy birthday to Minecraft’s Creepers!_ \[online] VG247. Available at: [https://www.vg247.com/minecraft-creepers-happy-birthday](https://www.vg247.com/minecraft-creepers-happy-birthday)
+
+Brown, A. (2021). _How Minecraft Creepers Originated From A Pig Accident_. \[online] ScreenRant. Available at: [https://screenrant.com/minecraft-creeper-origin-design-how-avoid-mob-attack](https://screenrant.com/minecraft-creeper-origin-design-how-avoid-mob-attack)
