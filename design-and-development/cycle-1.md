@@ -57,6 +57,59 @@ print(session_details)
 
 At the end of this cycle, I have confirmed that Node.js is able to interact with my database through the sqlite3 library, both through reading and writing data. This will be necessary for my game to have a user account system and a leaderboard to compare time records.&#x20;
 
+Below is the code that imports the sqlite3 library and opens/creates a new database:
+
+```javascript
+// Import SQLite3 module for handling SQLite databases
+const sqlite3 = require('sqlite3')
+
+// Open/create SQLite database
+const db = new sqlite3.Database("data.db")
+```
+
+Below is the code that creates tables for user accounts and sessions if they don't exist:
+
+```javascript
+// Create tables for accounts and sessions
+db.run(`CREATE TABLE IF NOT EXISTS users (
+    username TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL,
+    record INT
+)`)
+db.run(`CREATE TABLE IF NOT EXISTS sessions (
+    session TEXT NOT NULL UNIQUE,
+    username TEXT NOT NULL
+)`)
+```
+
+Below is the code that writes test entries to the tables:
+
+```javascript
+// Write to database
+db.run(`INSERT INTO users (username, password) VALUES ('charlie','password')`)
+db.run(`INSERT INTO sessions (session, username) VALUES ('test', 'charlie')`)
+```
+
+Below is the code that reads entries from the tables:
+
+```javascript
+// Read from database
+db.get(`SELECT * FROM users WHERE username='charlie'`, (err, row) => {
+    if (err) {
+        console.log(err)
+    }
+    
+    console.log(row)
+})
+db.get(`SELECT * FROM sessions WHERE session='test'`, (err, row) => {
+    if (err) {
+        console.log(err)
+    }
+    
+    console.log(row)
+})
+```
+
 ### Challenges
 
 One challenging aspect of this first cycle was working with the asynchronous nature of the Node.js sqlite3 library. This will be useful for my program later on as I want my server to be able to facilitate multiple queries at once, for example if several users are registering an account at once. While in this cycle I can use the "serialize" function so that SQL queries are executed in order, I think in the long-term I will need to find more flexible solutions such as using async functions and promises.
