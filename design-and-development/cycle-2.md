@@ -74,9 +74,7 @@ Evidence for testing
 
 ### Tests
 
-| Test | Instructions                                                                                             | What I expect                                                                       | What actually happens | Pass/Fail |
-| ---- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | --------------------- | --------- |
-| 1    | Display forms allowing the user to enter and submit their username, password, and email (if registering) | Login and registration forms allow user to enter their details and submit the form. | As expected           | Pass      |
+<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Display forms allowing the user to enter and submit their username, password, and email (if registering)</td><td>Login and registration forms allow user to enter their details and submit the form.</td><td>As expected</td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
 
