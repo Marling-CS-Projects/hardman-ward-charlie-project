@@ -16,9 +16,11 @@ In this first cycle, i will be configuring my SQLite database and testing that I
 
 ### Key Variables
 
-| Variable Name | Use |
-| ------------- | --- |
-|               |     |
+| Variable Name | Use                                                  |
+| ------------- | ---------------------------------------------------- |
+| db            | Faciliate read/write operations to external database |
+| row           | Store output of SQL queries                          |
+| err           | If SQL query fails, the cause will be stored here    |
 
 ### Pseudocode
 
@@ -45,9 +47,9 @@ db.run(`INSERT INTO users (username, password) VALUES ('charlie','password')`)
 db.run(`INSERT INTO sessions (session, username) VALUES ('test', charlie')`)
 
 // Read from database
-const user_details = db.get(`SELECT * FROM users WHERE username='charlie'`)
+user_details = db.get(`SELECT * FROM users WHERE username='charlie'`)
 print(user_details)
-const session_details = db.get(`SELECT * FROM sessions WHERE session='test'`)
+session_details = db.get(`SELECT * FROM sessions WHERE session='test'`)
 print(session_details)
 ```
 
