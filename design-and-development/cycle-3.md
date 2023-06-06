@@ -13,9 +13,9 @@ In this third cycle, I will be testing the Node.js implementation of hashing alg
 
 ### Key Variables
 
-| Variable Name | Use |
-| ------------- | --- |
-|               |     |
+| Variable Name | Use                           |
+| ------------- | ----------------------------- |
+| hash          | Store hashed output of string |
 
 ### Pseudocode
 
