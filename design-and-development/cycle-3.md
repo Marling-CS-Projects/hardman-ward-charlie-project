@@ -6,7 +6,7 @@ In this third cycle, I will be testing the Node.js implementation of hashing alg
 
 ### Objectives
 
-* [ ] Write a new entry to my users table with the password hashed
+* [x] Write a new entry to my users table with the password hashed
 * [ ] Compare passwords with the one in the database to see if they are valid
 
 ### Usability Features
@@ -43,13 +43,9 @@ print(details_valid) // Should print user details
 
 ## Development
 
-### Outcome
-
-
-
 ### Challenges
 
-
+I found the Node.js implementation of the bcrypt algorithm very challenging to get the hang of and have decided I will not be using it in my project. While this means passwords will be stored in plaintext, creating a potential security risk in large-scale applications, I heavily doubt my game will be targeted by hackers as they have no motive.
 
 ## Testing
 
