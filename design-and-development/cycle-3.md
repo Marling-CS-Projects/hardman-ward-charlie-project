@@ -57,8 +57,10 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run initial code</td><td>The test entry with hashed password is successfully written to the users table, and the password checks return "incorrect" and "correct" respectively.</td><td>The test entry is successfully written to the users table but due to the asynchronous nature of the bcrypt and sqlite3 library, the password checks run at the same time and therefore, they both return "incorrect" because the entry does not exist in the users table yet.</td><td>Fail</td></tr><tr><td>2</td><td></td><td></td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run initial code</td><td>The test entry with hashed password is successfully written to the users table, and the password checks return "incorrect" and "correct" respectively.</td><td>The test entry is successfully written to the users table but due to the asynchronous nature of the bcrypt and sqlite3 library, the password checks run at the same time and therefore, they both return "incorrect" because the entry does not exist in the users table yet.</td><td>Fail</td></tr><tr><td>2</td><td>Run updated version with a function for checking passwords and using callbacks so the code waits before moving onto the next task.</td><td>The test entry with hashed password is successfully written to the users table, and the password checks return "incorrect" and "correct" respectively.</td><td>Despite using callbacks so the code waits between tasks, I get the same output as the previous test. After debugging I find bcrypt is generating a different hash when checking the password to when writing the entry, even though the strings were the same.</td><td>Fail</td></tr></tbody></table>
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/Screenshot_2023-06-05_18-51-01.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot_2023-06-05_18-51-01.png" alt=""><figcaption><p>First test (fail)</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Screenshot (2).png" alt=""><figcaption><p>Second test (fail)</p></figcaption></figure>
