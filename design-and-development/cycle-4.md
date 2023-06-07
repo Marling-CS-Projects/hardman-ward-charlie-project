@@ -44,11 +44,66 @@ app.run(port=8080)
 
 ### Outcome
 
+At the end of this cycle, I have confirmed that Node.js is able to receive and handle POST requests, which is a vital aspect of the login/registration and leaderboard aspects of my game. Node.js, through the Express.js library, is able to parse data submitted in an HTML form and send a response to the client.
 
+In order to parse data submitted by the user in the form, below is the code to import the third-party body-parser Node.js module:
 
-### Challenges
+{% code title="app.js" %}
+```javascript
+const bodyParser = require('body-parser')
+```
+{% endcode %}
 
+Below is the code that sets up an Express.js application and configures it to serve static pages from the public directory in my project folder:
 
+{% code title="app.js" %}
+```javascript
+const app = express()
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.static(__dirname + "/public"))
+```
+{% endcode %}
+
+Below is the code that prints out the username, email, and password submitted in the form:
+
+{% code title="app.js" %}
+```javascript
+app.post('/test', (req, res) => {
+    console.log("Username is " + req.body.username)
+    console.log("Email is " + req.body.email)
+    console.log("Password is " + req.body.password)
+```
+{% endcode %}
+
+After the form details are printed, the server sends a response to the client saying "Hello, world!" I use this as confirmation that the request was sent and received:
+
+{% code title="app.js" %}
+```javascript
+res.end('Hello, world!')
+```
+{% endcode %}
+
+For a POST request to be sent on submission of an HTML form, it must be specified where the request is to be sent and through what method. Here is the code for the test form:
+
+{% code title="public/test.html" %}
+```html
+<form action="/test" method="POST">
+    <fieldset>
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+    </fieldset>
+    <fieldset>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+    </fieldset>
+    <fieldset>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+    </fieldset>
+    <input type="submit" value="Submit">
+</form>
+```
+{% endcode %}
 
 ## Testing
 
