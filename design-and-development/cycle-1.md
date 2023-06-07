@@ -2,7 +2,7 @@
 
 ## Design
 
-In this first cycle, i will be configuring my SQLite database and testing that I can read and write to it from Node.js. I will use this later on to faciliate registration of new user accounts, authentication of existing accounts, and a leaderboard system comparing time records of players.
+In this first cycle, i will be configuring my SQLite database and testing that I can read and write to it from Node.js. I will use this later on to facilitate registration of new user accounts, authentication of existing accounts, and a leaderboard system comparing time records of players.
 
 ### Objectives
 

@@ -19,6 +19,7 @@
 * [2.2.1 Cycle 1: Configure database](design-and-development/cycle-1.md)
 * [2.2.2 Cycle 2: Login/registration pages](design-and-development/cycle-2.md)
 * [2.2.3 Cycle 3: Hashing passwords with bcrypt](design-and-development/cycle-3.md)
+* [2.2.4 Cycle 4: Receive POST requests](design-and-development/cycle-4.md)
 
 ## 3 Testing <a href="#testing" id="testing"></a>
 
