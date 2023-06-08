@@ -6,9 +6,9 @@ In this cycle, I will be testing the ability of Node.js to save cookies and read
 
 ### Objectives
 
-* [ ] Handle POST request from HTML form
-* [ ] Save username in browser cookie
-* [ ] Direct the user to a page stating their username if a value is read from cookie
+* [x] Handle POST request from HTML form
+* [x] Save username in browser cookie
+* [x] Direct the user to a page stating their username if a value is read from cookie
 
 ### Usability Features
 
@@ -70,3 +70,8 @@ Evidence for testing
 
 ### Evidence
 
+<figure><img src="../.gitbook/assets/Screenshot (14).png" alt=""><figcaption><p>Login form on http://localhost:8080/login.html</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Screenshot (15).png" alt=""><figcaption><p>Welcome page showing username stored in cookie</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Screenshot (16).png" alt=""><figcaption><p>Cookie for localhost saved in Chrome</p></figcaption></figure>
