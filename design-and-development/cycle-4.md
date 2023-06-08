@@ -24,20 +24,25 @@ In the fourth cycle, I will be testing the ability of Node.js to receive POST re
 ### Pseudocode
 
 ```
+// Import Express.js module
 import express
 
+// Setup Express.js app and serve static files from public directory
 app = express()
 app.public_dir("/public")
 
+// Handle POST request "/test"
 app.receive_post_req("/test", (req, res) {
+    // Output details submitted in form
     print("Username is: " + req.username)
     print("Email is: " + req.email)
     print("Password is: " + req.password)
     
+    // Response to client to indicate success
     res("Hello world!")
 })
 
-app.run(port=8080)
+app.run(port=8080) // Run on port 8080 (accessible at http://localhost:8080)
 ```
 
 ## Development
