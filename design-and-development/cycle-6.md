@@ -6,11 +6,11 @@ In this cycle, I will be be combining the registration form from [Cycle 2](cycle
 
 ### Objectives
 
-* [ ] Create a SQLite database with an automatically generated unique numeric ID, username, email, password, and record fields.
-* [ ] Validate username submitted in registration form to ensure it does not already exist.
-* [ ] Insert entry containing submitted data to the users table.
-* [ ] Redirect the user to the login form if successful.
-* [ ] If an error occurs, display the error on a separate page to the user.
+* [x] Create a SQLite database with an automatically generated unique numeric ID, username, email, password, and record fields.
+* [x] Validate username submitted in registration form to ensure it does not already exist.
+* [x] Insert entry containing submitted data to the users table.
+* [x] Redirect the user to the login form if successful.
+* [x] If an error occurs, display the error on a separate page to the user.
 
 ### Usability Features
 
@@ -103,7 +103,16 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run initial code</td><td></td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run initial code</td><td>Registration succeeds and the browser is redirected to the login form.</td><td>SQLite3 syntax error when creating table near "AUTO_INCREMENT"</td><td>Fail</td></tr><tr><td>2</td><td>Run code with updated create table command</td><td>Registration succeeds and the browser is redirected to the login form.</td><td>As expected</td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
 
+<figure><img src="../.gitbook/assets/err1.png" alt=""><figcaption><p>Syntax error on test 1</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/success1.png" alt=""><figcaption><p>Registration form with test data</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>On success, the browser is redirected to the login form</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Test entry written into users table of database</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Error when attempting to register a username already in use</p></figcaption></figure>
