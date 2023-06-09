@@ -2,7 +2,7 @@
 
 ## Design
 
-In this cycle, I will be be combining the registration form from Cycle 2 with elements of other previous cycles to create a working registration form that allows the user to enter their username, email, and password to create an account. To prevent conflicts, the back-end must check if an account is already registered with the given username before proceeding with registration.
+In this cycle, I will be be combining the registration form from [Cycle 2](cycle-2.md) with elements of other previous cycles to create a working registration form that allows the user to enter their username, email, and password to create an account. To prevent conflicts, the server must check if an account is already registered with the given username before proceeding with registration.
 
 ### Objectives
 
@@ -22,47 +22,70 @@ In this cycle, I will be be combining the registration form from Cycle 2 with el
 
 ### Pseudocode
 
+{% code title="lib/account.js" %}
 ```
+// Import SQLite3 module for read/write to database
 import sqlite3
 
-db = sqlite3.open("data.db")
+// Callback function to create/open DB and create users table
+function open (callback):
+    db = sqlite3.open("data.db")
+    db.run(`CREATE TABLE IF NOT EXISTS users (
+        id INTEGER NOT NULL AUTO_INCREMENT,
+        username TEXT NOT NULL UNIQUE,
+        email TEXT NOT NULL,
+        password TEXT NOT NULL,
+        record INT,
+        PRIMARY KEY (id)
+    )`)
+    callback(db)
 
-db.run(`CREATE TABLE IF NOT EXISTS users (
-    id INTEGER NOT NULL AUTO_INCREMENT,
-    username TEXT NOT NULL UNIQUE,
-    email TEXT NOT NULL,
-    password TEXT NOT NULL,
-    record INT,
-    PRIMARY KEY (id)
-)`)
-
+// Register function to check if username is taken and if not create new account
 function register (form, callback):
-    username = form.username
-    email = form.email
-    password = form.password
+    open((db) : 
+        // Get details submitted in form
+        username = form.username
+        email = form.email
+        password = form.password
     
-    username_exists = db.get(`SELECT * FROM users WHERE username=[username]`)
-    if username_exists:
-        callback(409)
-    else:
-        db.run(`INSERT INTO users (username, email, password) VALUES ([username], [email], [password])`)
-        catch err:
-            callback(err)
-        no err:
-            callback(false)
-            
+        // Check if username is already in use
+        username_exists = db.get(`SELECT * FROM users WHERE username=[username]`)
+        if username_exists: // Username taken
+            callback(409) // Return 409 -- error code for "conflict"
+        else:
+            // Insert entry into users table
+            db.run(`INSERT INTO users (username, email, password) VALUES ([username], [email], [password])`)
+            catch err:
+                callback(err) // SQL error occurs
+            no err:
+                callback(false)
+    )
+
+export(register) // Register function can be imported from module
+```
+{% endcode %}
+
+{% code title="app.js" %}
+```
+// Import account module
+import lib/account
+
+// Setup Express app
 app = express()
 app.public_dir("/public")
 
+// Handle POST request "/register"
 app.receive_post_req('/register', (req, res) :
-    register(req.body, (err): 
+    // Run register function
+    account.register(form=req.body, (err): 
         if err:
-            res.send_error(err)
+            res.send_error(err) // Display error message to client
         else:
-            redirect("login.html")
+            redirect("login.html") // Redirect to login page
 
 app.run(port=8080)
 ```
+{% endcode %}
 
 ## Development
 
