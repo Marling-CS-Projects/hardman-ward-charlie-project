@@ -22,6 +22,7 @@
 * [2.2.4 Cycle 4: Receive POST requests](design-and-development/cycle-4.md)
 * [2.2.5 Cycle 5: Reading and saving cookies](design-and-development/cycle-5.md)
 * [2.2.6 Cycle 6](design-and-development/cycle-6.md)
+* [Cycle Template](design-and-development/cycle-template.md)
 
 ## 3 Testing <a href="#testing" id="testing"></a>
 
