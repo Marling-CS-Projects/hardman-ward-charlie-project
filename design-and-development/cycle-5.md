@@ -14,9 +14,11 @@ In this cycle, I will be testing the ability of Node.js to save cookies and read
 
 ### Key Variables
 
-| Variable Name | Use                          |
-| ------------- | ---------------------------- |
-| app           | Store Express.js application |
+| Variable Name           | Use                                                    |
+| ----------------------- | ------------------------------------------------------ |
+| app                     | Store Express.js application                           |
+| req.cookies             | List of cookies stored in the browser for that website |
+| res.cookie(name, value) | Function to save cookie with specified name and value  |
 
 ### Pseudocode
 
@@ -54,11 +56,43 @@ app.run(port=8080) // Run on port 8080 (accessible at http://localhost:8080)
 
 ### Outcome
 
+At the end of this cycle, I have successfully saved a cookie based on HTML form input in Node.js and read from it. This will be necessary for the accounts system of my game because the game will need some way of knowing if the player is signed in, and if so, what account they are signed in to.
 
+For parsing cookies in a format supported by JavaScript, I used the cookie-parser middleware:
 
-### Challenges
+{% code title="app.js" %}
+```javascript
+const cookieParser = require('cookie-parser')
+app.use(cookieParser())
+```
+{% endcode %}
 
+I  used a GET request to determine what page the user would be directed to based on cookie value when they attempt to access the root of the server (http://localhost:8080/). If the value was undefined, and therefore the user was not signed in, they would be redirected to the login form, while if the user was signed in, they would be displayed their username.
 
+{% code title="app.js" %}
+```javascript
+app.get('/', (req, res) => {
+    const username = req.cookies.username
+
+    if (username == undefined) {
+        res.redirect("login.html")
+    } else {
+        res.end("Welcome, " + username)
+    }
+})
+```
+{% endcode %}
+
+Similar to Cycle 4, I used a POST request to handle the login form's submission, this time instead of outputting the details the program would save the username in a cookie before redirecting to the root of the server, triggering the GET request:
+
+{% code title="app.js" %}
+```javascript
+app.post('/login', (req, res) => {
+    res.cookie('username', req.body.username)
+    res.redirect('/')
+})
+```
+{% endcode %}
 
 ## Testing
 
@@ -66,7 +100,7 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run initial code</td><td></td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run initial code</td><td>On submission of login form, the value entered as the username is stored in a cookie and the browser is redirected to a page showing the username value.</td><td>As expected</td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
 
