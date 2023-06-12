@@ -95,7 +95,32 @@ app.run(port=8080)
 
 ### Challenges
 
+My initial test failed because of a syntax error in the code to create the users table. The SQL query attempted to create a field "id" with the property "AUTO\_INCREMENT" so the number would increase on its own for each account made -- I didn't realise I didn't need the underscore. After modifying the query to use AUTO\_INCREMENT and set "id" as the primary key on the same line, the table was successfully created.
 
+Original SQL query that caused a syntax error:
+
+```sql
+CREATE TABLE IF NOT EXISTS users (
+        id INTEGER AUTO_INCREMENT,
+        username TEXT NOT NULL UNIQUE,
+        email TEXT NOT NULL,
+        password TEXT NOT NULL,
+        record INT,
+        PRIMARY KEY (id)
+)
+```
+
+Updated query that was successful:
+
+```sql
+CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT NOT NULL UNIQUE,
+        email TEXT NOT NULL,
+        password TEXT NOT NULL,
+        record INT
+)
+```
 
 ## Testing
 
@@ -103,7 +128,7 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run initial code</td><td>Registration succeeds and the browser is redirected to the login form.</td><td>SQLite3 syntax error when creating table near "AUTO_INCREMENT"</td><td>Fail</td></tr><tr><td>2</td><td>Run code with updated create table command</td><td>Registration succeeds and the browser is redirected to the login form.</td><td>As expected</td><td>Pass</td></tr></tbody></table>
+<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Register account using form input</td><td>Registration succeeds and the browser is redirected to the login form.</td><td>SQLite3 syntax error when creating table near "AUTO_INCREMENT"</td><td>Fail</td></tr><tr><td>2</td><td>Register account using form input</td><td>Registration succeeds and the browser is redirected to the login form.</td><td>As expected</td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
 
