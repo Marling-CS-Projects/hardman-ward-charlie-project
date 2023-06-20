@@ -100,7 +100,7 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run initial code</td><td>On submission of login form, the value entered as the username is stored in a cookie and the browser is redirected to a page showing the username value.</td><td>As expected</td><td>Pass</td></tr></tbody></table>
+<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Access login form at http://localhost:8080</td><td>Server detects no cookie saved and redirects browser to login form.</td><td>As expected</td><td>Pass</td></tr><tr><td>2</td><td>Cookie saved on submission of form containing username.</td><td>Cookie for http://localhost containing whatever was typed into the username input in the login form.</td><td>As expected</td><td>Pass</td></tr><tr><td>3</td><td>Redirect client to page showing their username.</td><td>Server obtains username from cookie and uses it in a personalised page which is shown to the user.</td><td>As expected</td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
 
