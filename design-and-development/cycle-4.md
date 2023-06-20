@@ -17,7 +17,7 @@ In the fourth cycle, I will be testing the ability of Node.js to receive POST re
 
 | Variable Name | Use                                   |
 | ------------- | ------------------------------------- |
-| app           | Store Express.js application          |
+| app           | Express.js application                |
 | req           | Information submitted in POST request |
 | res           | Send response to client               |
 
@@ -116,7 +116,7 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run initial code</td><td>Form is displayed at http://localhost:8080/test.html, the details are outputted in the terminal on submission, and the page changes to display the text "Hello world!" after submission</td><td>As expected</td><td>Pass</td></tr></tbody></table>
+<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Access form at http://localhost:8080</td><td>Form is displayed at http://localhost:8080/test.html.</td><td>As expected</td><td>Pass</td></tr><tr><td>2</td><td>POST request successfully sent on form submission.</td><td>Details entered by user in form outputted in console.</td><td>As expected</td><td>Pass</td></tr><tr><td>3</td><td>Server response received by client</td><td>Page in browser changes to display text "Hello world!"</td><td>As expected</td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
 

@@ -74,7 +74,7 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Display forms allowing the user to enter and submit their username, password, and email (if registering)</td><td>Login and registration forms allow user to enter their details and submit the form.</td><td>As expected</td><td>Pass</td></tr></tbody></table>
+<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Load registration and login forms</td><td>Forms clear to user where to enter their data.</td><td>As expected</td><td>Pass</td></tr><tr><td>2</td><td>Submit data of forms</td><td>Page reloads on clicking "submit" button</td><td>As expected</td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
 

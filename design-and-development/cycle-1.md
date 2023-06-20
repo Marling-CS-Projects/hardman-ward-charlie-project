@@ -122,14 +122,14 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run initial code</td><td>Database is created along with two tables for user details and sessions, test entries are written successfully, and the results of queries are outputted to the console.</td><td>Due to the asynchronous nature of the SQLite3 Node.js library, the query commands are run before the tables get to be initialised, resulting in an error about the tables being nonexistent.</td><td>Fail</td></tr><tr><td>2</td><td>Run code with all queries wrapped in the "serialize" function so program waits until each query is complete before moving onto the next.</td><td>Database is created along with two tables for user details and sessions, test entries are written successfully, and the results of queries are outputted to the console.</td><td>As expected</td><td>Pass</td></tr></tbody></table>
+<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Create new database and initialise two tables.</td><td>Two tables "users" and "sessions" in database file.</td><td><p>As expected</p><p></p></td><td>Pass</td></tr><tr><td>2</td><td>Write test entries.</td><td>Test entries for users and sessions written.</td><td>Due to the asynchronous nature of the SQLite3 library, the INSERT SQL code is run before the tables are created, resulting in an error because the tables do not exist yet.</td><td>Fail</td></tr><tr><td>3</td><td>Write test entries, with all SQL code wrapped in serialize function.</td><td>Test entries for users and sessions written.</td><td>As expected</td><td>Pass</td></tr><tr><td>4</td><td>SQL queries obtain values of the test entries.</td><td>Values of the previous test entries are outputted to the console in the format of a list.</td><td>As expected</td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/Screenshot from 2023-05-22 09-41-56.png" alt=""><figcaption><p>First test failed with errors about the tables not existing</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot from 2023-05-22 09-41-56.png" alt=""><figcaption><p>Error about nonexistent tables on the second test</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Screenshot from 2023-05-22 09-42-13.png" alt=""><figcaption><p>Second test successful</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot from 2023-05-22 09-42-13.png" alt=""><figcaption><p>Fourth test outputs values of entries to console</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Screenshot from 2023-05-22 09-47-22.png" alt=""><figcaption><p>User account details written to "users" table</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot from 2023-05-22 09-47-22.png" alt=""><figcaption><p>Third test -- test entry for "users" table</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Screenshot from 2023-05-22 09-47-15.png" alt=""><figcaption><p>Corresponding session written to "sessions" table</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot from 2023-05-22 09-47-15.png" alt=""><figcaption><p>Third test -- test entry for "sessions" table</p></figcaption></figure>
