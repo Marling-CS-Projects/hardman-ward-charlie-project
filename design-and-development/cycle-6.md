@@ -91,7 +91,46 @@ app.run(port=8080)
 
 ### Outcome
 
+At the end of this cycle, I have successfully setup a working registration form for players to sign up in order to have their scores counted on the leaderboard and play multiplayer. I will now proceed onto the login form so the player's details can be authenticated and have their "id" property stored in a cookie.
 
+Functions relating to the accounts system are stored in a separate Javascript file, account.js. Each time the server operates on the database, it will run this open function and return the db object as a callback so the interpreter waits until the task is finished:
+
+{% code title="lib/account.js" %}
+```javascript
+function open(callback) {
+    const db = new sqlite3.Database("data.db")
+    db.run(`CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT NOT NULL UNIQUE,
+        email TEXT NOT NULL,
+        password TEXT NOT NULL,
+        record INT
+    )`)
+    callback(db)
+}
+```
+{% endcode %}
+
+The function for the registration itself takes in one parameter, form, which is intended to be the body of the POST request. After opening the database, it assigns username, email, and password to constant variables.&#x20;
+
+```javascript
+function register(form, callback) {
+    open((db) => {
+        const username = form.username
+        const email = form.email
+        const password = form.passwordjaa
+```
+
+Next the server must check if the username is already taken and if that is the case, return an error. I implemented this through a SQL query that selects all the fields from the users table if the username is equal to that submitted by the user in the form. If any value is returned, that means a matching entry was found and therefore the username is already used by another account.
+
+```javascript
+ db.get(`SELECT * FROM users WHERE username='${username}'`, (err, usernameExists) => {
+        if (usernameExists) {
+           callback({
+              code: 409,
+              msg: "Username already taken"
+       })
+```
 
 ### Challenges
 
