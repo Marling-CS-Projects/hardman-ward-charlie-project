@@ -113,6 +113,7 @@ function open(callback) {
 
 The function for the registration itself takes in one parameter, form, which is intended to be the body of the POST request. After opening the database, it assigns username, email, and password to constant variables.&#x20;
 
+{% code title="lib/account.js" %}
 ```javascript
 function register(form, callback) {
     open((db) => {
@@ -120,9 +121,11 @@ function register(form, callback) {
         const email = form.email
         const password = form.passwordjaa
 ```
+{% endcode %}
 
 Next the server must check if the username is already taken and if that is the case, return an error. I implemented this through a SQL query that selects all the fields from the users table if the username is equal to that submitted by the user in the form. If any value is returned, that means a matching entry was found and therefore the username is already used by another account.
 
+{% code title="lib/account.js" %}
 ```javascript
  db.get(`SELECT * FROM users WHERE username='${username}'`, (err, usernameExists) => {
         if (usernameExists) {
@@ -131,6 +134,49 @@ Next the server must check if the username is already taken and if that is the c
               msg: "Username already taken"
        })
 ```
+{% endcode %}
+
+If no matching entry was found, the server continues with registering the user. I used SQL's INSERT INTO command to add a new entry with the user details submitted in the form. If an error occurs, an internal server error of code 500 is returned.
+
+{% code title="lib/account.js" %}
+```javascript
+db.run(`INSERT INTO users (username, email, password) VALUES ('${username}', '${email}', '${password}')`, (err) => {
+    if (err) {
+        callback({
+            code: 500,
+            msg: "Internal database error"
+        })
+    } else {
+        callback(false)
+    }
+})
+```
+{% endcode %}
+
+In the main file, I import the contents of my accounts module using the following:
+
+{% code title="" %}
+```javascript
+const account = require('./lib/account')
+```
+{% endcode %}
+
+On receiving a POST request at /register, the request body is passed in to the register function. If an error occurs, its status code and message will be sent as the response to the client. If the registration is successful, the client is redirected to the login form.
+
+{% code title="app.js" %}
+```javascript
+app.post('/register', (req, res) => {
+    account.register(req.body, (err) => {
+        if (err) {
+            res.status(err.code).send(err.msg)
+        } else {
+            res.redirect("login.html")
+        }
+        res.end()
+    })
+})
+```
+{% endcode %}
 
 ### Challenges
 
@@ -167,7 +213,7 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Register account using form input</td><td>Registration succeeds and the browser is redirected to the login form.</td><td>SQLite3 syntax error when creating table near "AUTO_INCREMENT"</td><td>Fail</td></tr><tr><td>2</td><td>Register account using form input</td><td>Registration succeeds and the browser is redirected to the login form.</td><td>As expected</td><td>Pass</td></tr></tbody></table>
+<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Submit form with new username</td><td>Registration succeeds and the browser is redirected to the login form.</td><td>SQLite3 syntax error when creating table near "AUTO_INCREMENT"</td><td>Fail</td></tr><tr><td>2</td><td>Submit form with new username</td><td>Registration succeeds and the browser is redirected to the login form.</td><td>As expected</td><td>Pass</td></tr><tr><td>3</td><td>Submit form with username already in use</td><td>Error shown saying username is already taken.</td><td>As expected</td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
 
