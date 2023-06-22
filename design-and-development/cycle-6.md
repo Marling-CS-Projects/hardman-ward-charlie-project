@@ -16,9 +16,13 @@ In this cycle, I will be be combining the registration form from [Cycle 2](cycle
 
 ### Key Variables
 
-| Variable Name | Use |
-| ------------- | --- |
-|               |     |
+| Variable Name | Use                                                  |
+| ------------- | ---------------------------------------------------- |
+| db            | Faciliate read/write operations to external database |
+| err           | Store errors that may occur on executing SQL queries |
+| req.body      | Information submitted in form                        |
+| res           | Response to client                                   |
+| register      | Function to register a new user                      |
 
 ### Pseudocode
 
