@@ -1,4 +1,4 @@
-# Cycle Template
+# Template
 
 ## Design
 
