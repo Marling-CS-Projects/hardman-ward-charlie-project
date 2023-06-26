@@ -52,11 +52,34 @@ print(format_seconds(10))
 
 ### Outcome
 
+At the end of this cycle, I have setup a function that can convert any given seconds value to the format of HH:MM:SS, which I will use later on in development to display time records on the leaderboard.
 
+My function starts by calculating how many full hours are in the given seconds, and then deducting the seconds those hours constitute from the seconds variable.
 
-### Challenges
+{% code title="app.js" %}
+```javascript
+const hours = Math.floor(seconds / 3600)
+seconds -= (hours * 3600)
+```
+{% endcode %}
 
+It then calculates how many full minutes are in the remaining seconds, and then subtracts the seconds those minutes constitute from the seconds variable.
 
+{% code title="app.js" %}
+```javascript
+const minutes = Math.floor(seconds / 60)
+seconds -= (minutes * 60)
+```
+{% endcode %}
+
+Finally, the function returns the hours, minutes, and remaining seconds in the format HH:MM:SS.
+
+{% code title="app.js" %}
+```javascript
+const format = `${('0' + hours).slice(-2)}:${('0' + minutes).slice(-2)}:${('0' + seconds).slice(-2)}`
+return format
+```
+{% endcode %}
 
 ## Testing
 
