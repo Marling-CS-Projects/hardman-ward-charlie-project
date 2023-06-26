@@ -225,7 +225,7 @@ Evidence for testing
 
 <figure><img src="../.gitbook/assets/success1.png" alt=""><figcaption><p>Registration form with test data</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>On success, the browser is redirected to the login form</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>On success, the browser is redirected to the login form</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Test entry written into users table of database</p></figcaption></figure>
 

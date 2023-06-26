@@ -23,6 +23,7 @@
 * [2.2.5 Cycle 5: Reading and saving cookies](design-and-development/cycle-5.md)
 * [2.2.6 Cycle 6: Working registration form](design-and-development/cycle-6.md)
 * [2.2.7 Cycle 7: Working login](design-and-development/cycle-7.md)
+* [2.2.8 Cycle 8: Convert seconds to HH:MM:SS](design-and-development/cycle-8.md)
 * [Template](design-and-development/template.md)
 
 ## 3 Testing <a href="#testing" id="testing"></a>
