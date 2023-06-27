@@ -196,7 +196,7 @@ Evidence for testing
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption><p>ERR_STREAM_WRITE_AFTER_END on test 1</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>ERR_STREAM_WRITE_AFTER_END on test 1</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Redirected to login form on test 2</p></figcaption></figure>
 
