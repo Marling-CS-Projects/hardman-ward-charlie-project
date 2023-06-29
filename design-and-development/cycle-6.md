@@ -229,4 +229,4 @@ Evidence for testing
 
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Test entry written into users table of database</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Error when attempting to register a username already in use</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption><p>Error when attempting to register a username already in use</p></figcaption></figure>

@@ -196,9 +196,9 @@ Evidence for testing
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>ERR_STREAM_WRITE_AFTER_END on test 1</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption><p>ERR_STREAM_WRITE_AFTER_END on test 1</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Redirected to login form on test 2</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption><p>Redirected to login form on test 2</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/Screenshot_2023-06-24_07-36-32.png" alt=""><figcaption><p>Page displaying ID of user account on form submission in test 3</p></figcaption></figure>
 
