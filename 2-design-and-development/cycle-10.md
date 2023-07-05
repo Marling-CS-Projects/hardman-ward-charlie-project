@@ -23,8 +23,44 @@ In this cycle, I will be developing the page for the leaderboard. This will be a
 
 ### Pseudocode
 
+{% code title="lib/leaderboard.js" %}
 ```
+import open
+
+func get_personal_record(username):
+    record = db.get("SELECT record FROM users WHERE username=[username]")
+    return record
+    
+func top_records():
+    all_records = db.all("SELECT username, record FROM users ORDER BY ASC")
+    
+    top_records = []
+
+    for i in range(0, 50):
+        top_records.add({
+            username: all_records("username"),
+            record: all_records("record")
+        })
+    
+    return top_records
 ```
+{% endcode %}
+
+{% code title="lib/account.js" %}
+```
+func username_from_id(id):
+    username = db.get("SELECT username FROM users WHERE id=[id]")
+    return username
+```
+{% endcode %}
+
+{% code title="app.js" %}
+```
+app.receive_get_req("/leaderboard", func (req, res) => {
+    
+})
+```
+{% endcode %}
 
 ## Development
 
