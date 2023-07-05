@@ -25,6 +25,7 @@
 * [2.2.7 Cycle 7: Working login](2-design-and-development/cycle-7.md)
 * [2.2.8 Cycle 8: Convert seconds to HH:MM:SS](2-design-and-development/cycle-8.md)
 * [2.2.9 Cycle 9: Updating and reading time records](2-design-and-development/cycle-9.md)
+* [2.2.10 Cycle 10: Leaderboard page](2-design-and-development/cycle-10.md)
 * [Template](2-design-and-development/template.md)
 
 ## 3 Testing
