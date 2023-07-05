@@ -14,9 +14,10 @@ In this cycle, I will be using the Node.js SQLite3 library to set the time recor
 
 ### Key Variables
 
-| Variable Name | Use |
-| ------------- | --- |
-|               |     |
+| Variable Name | Use                                                   |
+| ------------- | ----------------------------------------------------- |
+| db            | Facilitate read/write operations to external database |
+| record        | Time record in seconds                                |
 
 ### Pseudocode
 
@@ -47,7 +48,38 @@ serialize:
 
 ### Outcome
 
+At the end of this cycle, I have confirmed I am able to update time records in the database, as well as read values for users and convert them to HH:MM:SS to make them easier to understand for the user. The former will be used when developing the base game to set a new record for the player. The latter will be used in the next cycle to create the leaderboard page with the shortest 50 times as well as the signed in player.&#x20;
 
+To set the records, I used the SQL UPDATE command and for now I will use the username for identifying which entry to modify. When I develop the game itself, the ID will be used since it is stored in the cookie and most easily accessible.
+
+{% code title="app.js" %}
+```javascript
+db.run(`UPDATE users SET record=612 WHERE username="charlie"`)
+db.run(`UPDATE users SET record=8362 WHERE username="chcharll"`)
+db.run(`UPDATE users SET record=10 WHERE username="chas_06"`)
+```
+{% endcode %}
+
+To obtain each one, I used the db.get function and checked for errors before continuing.
+
+{% code title="app.js" %}
+```javascript
+db.get(`SELECT record FROM users WHERE username="charlie"`, (err, row) => {
+    if (err) {
+        console.error(err)
+        return
+    }
+```
+{% endcode %}
+
+Finally, I format the record property of the row as HH:MM:SS and output to console:
+
+```javascript
+const record = formatSeconds(row.record)
+console.log(record)
+```
+
+The same is repeated for the other two users in the database.
 
 ## Testing
 
