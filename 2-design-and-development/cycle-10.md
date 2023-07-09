@@ -90,7 +90,7 @@ app.receive_get_req("/leaderboard", func (req, res) => {
 
 ### Outcome
 
-
+On completition of this cycle, I have setup the leaderboard page which will allow signed in players to check their record and view the top 50 records. This is key for the competitive element of the game. Later on, I will write the code for updating scores on the leaderboard from the client, which will be needed when writing the game itself to check if the player has beaten their record and to update it and notify the user if that is the case.
 
 ## Testing
 
