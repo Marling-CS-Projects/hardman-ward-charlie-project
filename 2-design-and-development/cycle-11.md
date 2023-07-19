@@ -16,9 +16,10 @@ In this cycle, I will be testing the ability of Socket.IO to facilitate communic
 
 ### Key Variables
 
-| Variable Name | Use |
-| ------------- | --- |
-|               |     |
+| Variable Name | Use                                                       |
+| ------------- | --------------------------------------------------------- |
+| server        | Manage the HTTP server of the Express app                 |
+| io            | Socket.IO instance used for sending and handling messages |
 
 ### Pseudocode
 
@@ -44,7 +45,59 @@ io.on_signal("button", id):
 
 ### Outcome
 
+At the end of this cycle, I have tested the ability of Socket.IO to facilitate communication between different clients, which will be used when developing the multiplayer part of my game so that whenever a player carries out an action, such as jumping, that action is registered for all players in the group.&#x20;
 
+First of all, in order to setup a Socket.IO instance, I must setup an HTTP server. To do this, I slightly alter the listening function so that instead of directly listening from the Express application, setup an HTTP server running the app and listen through that instead.
+
+{% code title="app.js" %}
+```javascript
+const server = http.createServer(app)
+server.listen(8080, () => {
+    console.log("Server is running!")
+})
+```
+{% endcode %}
+
+Next, I created the Socket.IO instance and setup its handling of the "connection" event (whenever a new client connects) to generate a UUIDv4 as the ID and send it to that client only. Additionally, the server notifies all other clients that a new client has joined with the ID.
+
+{% code title="app.js" %}
+```javascript
+const io = new Server(server)
+
+io.on('connection', (socket) => {
+    const id = uuidv4()
+    socket.emit('give id', id)
+    socket.broadcast.emit('new user', id)
+```
+{% endcode %}
+
+Last of all on the server-side, I setup the handling of a new Socket.IO event, which for now I just called "i clicked a button" which is emitted whenever any client clicks the button. I want for the server to send another event, which I called "someone clicked a button" to all the other clients and the ID of the client that clicked the button.
+
+{% code title="app.js" %}
+```javascript
+socket.on('i pressed a button', (id) => {
+    socket.broadcast.emit('someone pressed a button', id)
+})
+```
+{% endcode %}
+
+On the test page, I only wrote a basic HTML body which contains a div container for messages to be outputted to, and a button for the user to click. The button is disabled by default because it is supposed to be unusable until an ID is allocated to the client.
+
+{% code title="public/test.html" %}
+```html
+<div class="log"></div>
+<button class="click-me" disabled>Click Me!</button>
+```
+{% endcode %}
+
+Before I started writing the JavaScript for the test page, I have to first import two libraries: JQuery and client Socket.IO.
+
+{% code title="public/test.html" %}
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+```
+{% endcode %}
 
 ### Challenges
 
