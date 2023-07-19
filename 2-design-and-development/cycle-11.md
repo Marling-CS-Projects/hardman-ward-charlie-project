@@ -16,10 +16,11 @@ In this cycle, I will be testing the ability of Socket.IO to facilitate communic
 
 ### Key Variables
 
-| Variable Name | Use                                                       |
-| ------------- | --------------------------------------------------------- |
-| server        | Manage the HTTP server of the Express app                 |
-| io            | Socket.IO instance used for sending and handling messages |
+| Variable Name | Use                                                     |
+| ------------- | ------------------------------------------------------- |
+| server        | Manage the HTTP server of the Express app               |
+| io            | Socket.IO server used for sending and handling messages |
+| socket        | Connection to Socket.IO server from client              |
 
 ### Pseudocode
 
@@ -45,7 +46,7 @@ io.on_signal("button", id):
 
 ### Outcome
 
-At the end of this cycle, I have tested the ability of Socket.IO to facilitate communication between different clients, which will be used when developing the multiplayer part of my game so that whenever a player carries out an action, such as jumping, that action is registered for all players in the group.&#x20;
+At the end of this cycle, I have tested the ability of Socket.IO to facilitate communication between different clients, which will be used later on when developing the multiplayer part of my game so that whenever a player carries out an action, such as jumping, that action is registered for all players in the group.&#x20;
 
 First of all, in order to setup a Socket.IO instance, I must setup an HTTP server. To do this, I slightly alter the listening function so that instead of directly listening from the Express application, setup an HTTP server running the app and listen through that instead.
 
@@ -99,9 +100,57 @@ Before I started writing the JavaScript for the test page, I have to first impor
 ```
 {% endcode %}
 
-### Challenges
+Now onto the main script. I start by initialising Socket.IO and declaring a variable, myId, which will store the client's ID when it is sent by the server.
 
+{% code title="public/test.html" %}
+```javascript
+const socket = io()
 
+var myId
+```
+{% endcode %}
+
+When the client receives the "give id" event, I want the generated ID to be stored in the myId variable. Additionally, now that the client has been assigned an ID, the "click me" button should be enabled.
+
+{% code title="public/test.html" %}
+```javascript
+socket.on('give id', (id) => {
+    myId = id
+    $('.click-me').attr('disabled', false)
+    alert(myId)
+})
+```
+{% endcode %}
+
+Next, when a new client connects to the page, a brief message showing their ID and that they have joined will appear in the log. I do this through handling the "new user" event so that a new message with the ID in bold text is added to the "log" div container.
+
+{% code title="public/test.html" %}
+```javascript
+socket.on('new user', (id) => {
+    $('.log').html($('.log').html() + `<p><strong>${id}</strong> joined the group</p>`)
+})
+```
+{% endcode %}
+
+When the "click me" button is clicked by the user, the client will send the "i pressed a button" event to the Socket.IO server so it can be passed onto all the other clients.
+
+{% code title="public/test.html" %}
+```javascript
+$('.click-me').click(() => {
+    socket.emit('i pressed a button', myId)
+})
+```
+{% endcode %}
+
+Finally, if the client receives a "someone clicked the button" event, meaning another user clicked the button, that is added to the log in the same format as new connections.
+
+{% code title="public/test.html" %}
+```javascript
+socket.on('someone pressed a button', (id) => {
+    $('.log').html($('.log').html() + `<p><strong>${id}</strong> pressed a button</p>`)
+})
+```
+{% endcode %}
 
 ## Testing
 
