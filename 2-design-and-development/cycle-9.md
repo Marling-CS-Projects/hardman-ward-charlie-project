@@ -91,8 +91,8 @@ Evidence for testing
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (19) (1).png" alt=""><figcaption><p>New accounts created in test 1</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19) (1) (1).png" alt=""><figcaption><p>New accounts created in test 1</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Test record values set in test 2</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>Test record values set in test 2</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Records set in test 2 outputted in HH:MM:SS format in test 3</p></figcaption></figure>
