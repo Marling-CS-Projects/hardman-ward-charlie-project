@@ -71,7 +71,7 @@ io.on('connection', (socket) => {
 ```
 {% endcode %}
 
-Last of all on the server-side, I setup the handling of a new Socket.IO event, which for now I just called "i clicked a button" which is emitted whenever any client clicks the button. I want for the server to send another event, which I called "someone clicked a button" to all the other clients and the ID of the client that clicked the button.
+Last of all on the server-side, I setup the handling of a new Socket.IO event, which for now I just called "i pressed a button" which is emitted whenever any client clicks the button. I want for the server to send another event, which I called "someone pressed a button" to all the other clients and the ID of the client that clicked the button.
 
 {% code title="app.js" %}
 ```javascript
