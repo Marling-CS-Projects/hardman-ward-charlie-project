@@ -6,11 +6,11 @@ In this cycle, I will be testing the ability of Socket.IO to facilitate communic
 
 ### Objectives
 
-* [ ] Setup test page so any client that visits is connected to a Socket.IO server
-* [ ] Give each client a unique identifier using UUIDv4
-* [ ] Announce to everyone connected when someone joins
-* [ ] Place button on test page
-* [ ] Whenever any client clicks button, post "\<client identifier> clicked the button!"
+* [x] Setup test page so any client that visits is connected to a Socket.IO server
+* [x] Give each client a unique identifier (ID) using UUIDv4
+* [x] Announce to everyone connected when someone joins
+* [x] Place button on test page
+* [x] Whenever any client clicks button, post "\<client ID> pressed the button!"
 
 ### Usability Features
 
@@ -56,20 +56,20 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Assign unique ID to client on connection.</td><td>UUIDv4 is displayed as a browser alert on accessing the test page.</td><td>As expected</td><td>Pass</td></tr><tr><td>2</td><td>Display message to other clients on a new connection.</td><td>New ID is displayed alongside a short message to all other connected clients.</td><td>As expected</td><td>Pass</td></tr><tr><td>3</td><td>When a client clicks the button, display a message to all other clients.</td><td>Message containing ID shown to other clients on clicking the button.</td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Give unique ID to new client on connecting.</td><td>UUIDv4 ID generated and displayed as a browser alert when a client opens the test page. </td><td>As expected</td><td>Pass</td></tr><tr><td>2</td><td>Display a message to other clients whenever a new client connects.</td><td>New client's ID is displayed alongside a short message saying they've joined to all other connected clients.</td><td>As expected</td><td>Pass</td></tr><tr><td>3</td><td>Display a message to other clients whenever a client clicks the button.</td><td>Client's ID displayed alongside a short message saying they've pressed the button to all other connected clients.</td><td>As expected</td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>Test 1: ID generated using UUIDv4 displayed as popup alert on connecting to page</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>Test 1: UUIDv4-generated ID displayed as popup on new connection</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption><p>Test 2: First client to connect sees the IDs of the two other clients</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption><p>Test 2: Client #1 sees join messages for clients #2 and #3</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Test 2: Second client to connect sees the ID of the third client</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Test 2: Client #2 sees join message of client #3</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption><p>Test 2: Third client does not see any IDs as no new clients have connected since</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption><p>Test 2: Client #3 does not see any join messages as there have been no more new connections since joining</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Test 3: First client gets a message whenever the second or third click the button</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Test 3: Client #1 gets messages on clients #2 and #3 clicking the button</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption><p>Test 3: Second client gets a message whenever the first or third click the button</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption><p>Test 3: Client #2 gets messages on clients #1 and #3 clicking the button</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption><p>Test 3: Third client gets a message whenever the first or second click the button</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption><p>Test 3: Client #3 gets messages on clients #1 and #2 clicking the button</p></figcaption></figure>
