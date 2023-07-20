@@ -27,6 +27,7 @@
 * [2.2.9 Cycle 9: Updating and reading time records](2-design-and-development/cycle-9.md)
 * [2.2.10 Cycle 10: Leaderboard page](2-design-and-development/cycle-10.md)
 * [2.2.11 Cycle 11: Client communication using Socket.IO](2-design-and-development/cycle-11.md)
+* [2.2.12 Cycle 12: Socket.IO rooms](2-design-and-development/cycle-12.md)
 * [Template](2-design-and-development/template.md)
 
 ## 3 Testing
