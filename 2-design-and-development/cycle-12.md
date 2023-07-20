@@ -2,7 +2,7 @@
 
 ## Design
 
-
+In this cycle, I will be testing Socket.IO's rooms feature, which allows events to be broadcasted to a select group of clients. This will be used when developing the multiplayer mode of my game in which players can play the game in groups of up to four.
 
 ### Objectives
 
