@@ -17,9 +17,11 @@ In this cycle I will be combining the login system that I finished in cycle 7 wi
 
 ### Key Variables
 
-| Variable Name | Use |
-| ------------- | --- |
-|               |     |
+| Variable Name | Use                                                                                                 |
+| ------------- | --------------------------------------------------------------------------------------------------- |
+| myUsername    | Global variable to store client's username                                                          |
+| socket        | Transmit and receive Socket.IO events (messages)                                                    |
+| data          | Used when I want to transmit multiple variables in an event, for example both the room and username |
 
 ### Pseudocode
 
@@ -30,7 +32,92 @@ In this cycle I will be combining the login system that I finished in cycle 7 wi
 
 ### Outcome
 
+At the end of this cycle, I have integrated the login system that I finished in cycle 7 into the Socket.IO test page, meaning usernames are displayed next to messages instead of UUIDs. This will be important when developing multiplayer mode so the game can tell which player is performing a specific action such as movement, and display it to all other players in the group.
 
+The user ID, not username, is saved in a cookie when signing in so I used the usernameFromId function created in Cycle 10. On the client-side, I first extracted the ID value from the site cookies and then transmitted an event that I called "fetch username" containing the ID.
+
+{% code title="public/test.html" %}
+```javascript
+var myUsername
+
+const myId = document.cookie.split("; ").find((row) => row.startsWith("id=")) ?.split("=")[1];
+        
+socket.emit('fetch username', myId)
+```
+{% endcode %}
+
+Handling this event on the server-side involved taking the value included (the ID obtained from the cookies) and storing it as a temporary variable, id, and passing it into the usernameFromId callback function. Once that function has finished running, the server transmits an event "give username" back to the client. Unlike POST requests, Socket.IO does not have any specific function for responding to an event, so it must transmit a new event instead.
+
+{% code title="app.js" %}
+```javascript
+socket.on('fetch username', (id) => {
+    account.usernameFromId(id, (username) => {
+        socket.emit('give username', username)
+    })
+})
+```
+{% endcode %}
+
+When the client receives the "give username" event, it stores the username in the global variable, myUsername, meaning it can be accessed anywhere in the code. The first two buttons, create and join room, are enabled.
+
+{% code title="public/test.html" %}
+```javascript
+socket.on('give username', (username) => {
+    myUsername = username
+    alert("Your username is " + myUsername)
+
+    $('.create-room').attr('disabled', false)
+    $('.join-room').attr('disabled', false)
+})
+```
+{% endcode %}
+
+When the client receives "give room" from the server after the user clicked the "Create Room" button, in the previous cycle it responded by transmitting the "join room" event containing the room code and their UUID. The UUID is replaced with their username. This also applies to when the user clicks the "Join Room" button and types in the code
+
+{% code title="public/test.html" %}
+```javascript
+socket.emit('join room', {
+    room: myRoom,
+    username: myUsername
+})
+```
+{% endcode %}
+
+The server handling of the "join room" event transmitted on clicking create/join room no longer generates a UUID and transmits that to the client. Instead, it transmits a new event to the client which I called "you joined room" with no attached data, and instead of transmitting a UUID to all the other clients in the room, it transmits the username.
+
+{% code title="app.js" %}
+```javascript
+socket.on('join room', (data) => {
+    const { room, username } = data
+
+    socket.join(room)
+
+    socket.emit('you joined room')
+    socket.to(room).emit('new user', username)
+})
+```
+{% endcode %}
+
+Similarly, the server handling of the "i clicked the button" event, transmitted on clicking the "click me" button, transmits the username to the other clients in the room instead of the ID as the "someone clicked the button" event.
+
+{% code title="app.js" %}
+```javascript
+socket.to(room).emit('someone clicked the button', username)
+```
+{% endcode %}
+
+Finally, when the user clicks the "click me" button, the client transmits the "i clicked the button" event containing the username as a property, rather than the ID.
+
+{% code title="public/test.html" %}
+```javascript
+$('.click-me').click(() => {
+    socket.emit('i clicked the button', {
+        username: myUsername,
+        room: myRoom
+    })
+})
+```
+{% endcode %}
 
 ## Testing
 

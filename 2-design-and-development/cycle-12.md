@@ -16,9 +16,12 @@ In this cycle, I will be testing Socket.IO's rooms feature, which allows events 
 
 ### Key Variables
 
-| Variable Name | Use |
-| ------------- | --- |
-|               |     |
+| Variable Name            | Use                                                                                             |
+| ------------------------ | ----------------------------------------------------------------------------------------------- |
+| io.sockets.adapter.rooms | List of Socket.IO rooms and information about them, such as their members                       |
+| socket                   | Transmit and receive Socket.IO events (messages)                                                |
+| myRoom                   | Eight-character code of room that client has joined                                             |
+| myId                     | Randomly generated UUID that is assigned to the client to distinguish between clients (for now) |
 
 ### Pseudocode
 
