@@ -91,7 +91,7 @@ Evidence for testing
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Test 1</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Test 1</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Test 2</p></figcaption></figure>
 
