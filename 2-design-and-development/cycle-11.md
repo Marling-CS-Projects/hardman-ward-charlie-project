@@ -162,7 +162,7 @@ Evidence for testing
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>Test 1: UUIDv4-generated ID displayed as popup on new connection</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>Test 1: UUIDv4-generated ID displayed as popup on new connection</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (18) (1).png" alt=""><figcaption><p>Test 2: Client #1 sees join messages for clients #2 and #3</p></figcaption></figure>
 

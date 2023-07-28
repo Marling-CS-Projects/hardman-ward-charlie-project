@@ -267,4 +267,4 @@ Test 1: Username corresponding to id stored in cookie displayed in browser
 
 <figure><img src="../.gitbook/assets/image (19) (1).png" alt=""><figcaption><p>Test 2: Personal record for signed in user displayed in browser</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>Test 3: Best records are displayed in order of lowest time in browser</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption><p>Test 3: Best records are displayed in order of lowest time in browser</p></figcaption></figure>

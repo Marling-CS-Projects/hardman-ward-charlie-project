@@ -29,6 +29,7 @@
 * [2.2.11 Cycle 11: Client communication using Socket.IO](2-design-and-development/cycle-11.md)
 * [2.2.12 Cycle 12: Socket.IO rooms](2-design-and-development/cycle-12.md)
 * [2.2.13 Cycle 13: Integrating login system with Socket.IO](2-design-and-development/cycle-13.md)
+* [2.2.14 Cycle 14: Title screen](2-design-and-development/cycle-14.md)
 * [Template](2-design-and-development/template.md)
 
 ## 3 Testing
