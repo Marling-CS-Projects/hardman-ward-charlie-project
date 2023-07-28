@@ -143,6 +143,134 @@ signInOutButton.onClick(() => {
 ```
 {% endcode %}
 
+On the client receiving a "give username" Socket.IO event, the game renders all four buttons: singleplayer, multiplayer, leaderboard, and sign in/out (which will have "sign out" text). This is because the only scenario in which the server would emit a "give username" event to this client is if they previously requested their username through emitting the "fetch username" event to the server, which the client only does if their "id" cookie is set to a value. In this scenario, the player is likely signed in and therefore has access to all functionality of the game.
+
+{% code title="public/game.js" %}
+```javascript
+socket.on('give username', (username) => { // Receive "give username" event from server
+    myUsername = username // Store obtained username in global variable (accessible from everywhere in the code)
+    
+    // Add single player button
+    const singlePlayerButton = add([
+        rect(300, 50),
+        color(160, 160, 160),
+        area(),
+        pos(center().x, center().y-90), // Higher above centre of screen
+        anchor("center")
+    ])
+    
+    // Add text to single player button
+    add([
+        text("Singleplayer", {
+            size: 20
+        }),
+        color(255, 255, 255),
+        area(),
+        pos(center().x, center().y-90),
+        anchor("center")
+    ])
+    
+    // Add multi player button
+    const multiPlayerButton = add([
+        rect(300, 50),
+        color(160, 160, 160),
+        area(),
+        pos(center().x, center().y-30), // Slightly above centre of screen
+        anchor("center")
+    ])
+    
+    // Add text to multi player button
+    add([
+        text("Multiplayer", {
+            size: 20
+        }),
+        color(255, 255, 255),
+        area(),
+        pos(center().x, center().y-30),
+        anchor("center")
+    ])
+    
+    // Add leaderboard button
+    const leaderBoardButton = add([
+        rect(300, 50),
+        color(160, 160, 160),
+        area(),
+        pos(center().x, center().y+30), // Slightly below centre of screen
+        anchor("center")
+    ])
+    
+    // Add text to leaderboard button
+    add([
+        text("Leaderboard", {
+            size: 20
+        }),
+        color(255, 255, 255),
+        area(),
+        pos(center().x, center().y+30),
+        anchor("center")
+    ])
+    
+    // Add sign in/out button
+    const signInOutButton = add([
+        rect(300, 50),
+        color(160, 160, 160),
+        area(),
+        pos(center().x, center().y+90), // Lower below centre of screen
+        anchor("center")
+    ])
+    
+    // Add "sign out" text to sign in/out button
+    add([
+        text("Sign Out", {
+            size: 20
+        }),
+        color(255, 255, 255),
+        area(),
+        pos(center().x, center().y+90),
+        anchor("center")
+    ])
+```
+{% endcode %}
+
+In this case, I want all four buttons to output a message to the log if clicked. Same as if signed out, I use the onClick function.
+
+{% code title="public/game.js" %}
+```javascript
+singlePlayerButton.onClick(() => {
+    console.log("You clicked singleplayer!")
+})
+    
+multiPlayerButton.onClick(() => {
+    console.log("You clicked multiplayer!")
+})
+    
+leaderBoardButton.onClick(() => {
+    console.log("You clicked leaderboard!")
+})
+    
+signInOutButton.onClick(() => {
+    console.log("You clicked sign in/out!")
+})
+```
+{% endcode %}
+
+Finally, if the player is signed in, their username should be displayed in small text beneath the buttons. This could be helpful if multiple people are sharing a computer to play the game or someone has multiple accounts so the player knows who they're currently signed in as.
+
+{% code title="public/game.js" %}
+```javascript
+// Add text displaying username
+add([
+    text("Signed in as: " + myUsername, { // "Signed in as" followed by username
+        size: 18
+    }),
+    color(160, 160, 160), // Grey text
+    area(),
+    pos(center().x, center().y+140), // Beneath all the buttons
+    anchor("center")
+])
+```
+{% endcode %}
+
 ### Challenges
 
 The first issue I encountered was getting the title text in the right place. By default, Kaboom.js puts the top left corner of the sprite at the coordinates provided in the "pos" (position) property. I wanted Kaboom.js to put the centre of the sprite at these given coordinates, which saves time as I won't have to figure how many pixels I need to add/take away from the position in order to get the sprite where I want.
