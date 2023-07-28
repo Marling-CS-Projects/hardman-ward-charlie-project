@@ -42,7 +42,7 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Initialise Kaboom.js engine with light blue background and 1280x720 resolution.</td><td>Light blue area displayed starting from top left corner of page of size 1280x720.</td><td>As expected</td><td>Pass</td></tr><tr><td>2</td><td>Render "Pixel Quest" title at top of title screen.</td><td>Grey large text saying "Pixel Quest" at top of Kaboom.js area.</td><td>Text appears but is cut off so only the bottom half is visible.</td><td>Fail</td></tr><tr><td>3</td><td>Increase the Y-coordinate of the title text so the text appears further down.</td><td>Grey large text saying "Pixel Quest" at top of Kaboom.js area.</td><td>As expected</td><td>Pass</td></tr></tbody></table>
+<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Initialise Kaboom.js engine with light blue background and 1280x720 resolution.</td><td>Light blue area displayed starting from top left corner of page of size 1280x720.</td><td>As expected</td><td>Pass</td></tr><tr><td>2</td><td>Render "Pixel Quest" title at top of title screen.</td><td>Grey large text saying "Pixel Quest" at top of Kaboom.js area.</td><td>Text appears but is cut off so only the bottom half is visible.</td><td>Fail</td></tr><tr><td>3</td><td>Increase the Y-coordinate of the title text so the text appears further down.</td><td>Grey large text saying "Pixel Quest" at top of Kaboom.js area.</td><td>As expected</td><td>Pass</td></tr><tr><td>4</td><td>Display browser alert if ID cookie is empty, which means the player isn't signed in. </td><td>Browser alert appears if the player is not signed in, telling them such.</td><td>As expected</td><td>Pass</td></tr><tr><td>5</td><td>Emit "fetch username" event with the user ID on loading the page to Socket.IO server, which gets the corresponding username and emits "give username" event to client with the username. On receiving this event, display username as browser alert.</td><td>Browser alert appears if player is signed in, telling them their username.</td><td>As expected</td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
 
@@ -51,3 +51,7 @@ Evidence for testing
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Test 2: Title text is cut off</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Test 3: Title text now appears properly</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption><p>Test 4: Browser alert to signed out players</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption><p>Test 5: Browser alert containing username for signed in players</p></figcaption></figure>
