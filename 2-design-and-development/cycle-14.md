@@ -32,6 +32,117 @@ In this cycle, I will be writing a simple title screen for my game. As laid out 
 
 At the end of this cycle, I have written most of the code for the title screen. This will greet all players when they access the website where the game is hosted. Signed in users will be presented with all four buttons, while those not signed in will only have access to singleplayer mode and the sign in button.
 
+First of all, the Kaboom.js engine is initialised as a 1280x720 container with a light blue background. This allows the code to make use of the wide range of features in Kaboom.js.
+
+{% code title="public/game.js" %}
+```javascript
+kaboom({
+    width: 1280,
+    height: 720,
+    background: [100, 255, 255] // Light blue in RGB format
+})
+```
+{% endcode %}
+
+Next, I created the title text. This is at the top middle of the screen and is the words "Pixel Quest" which is the name of my game. The text is 60px in size, grey, and easily visible.
+
+{% code title="public/game.js" %}
+```javascript
+// Add title text
+add([
+    text("Pixel Quest", {
+        size: 60
+    }), // "Pixel Quest" at size 60px
+    color(160, 160, 160), // Grey colour
+    area(),
+    pos(center().x, 50), // Display at horizontal middle, 50px away from top
+    anchor("center") // Centre of sprite is specified coordinates
+])
+```
+{% endcode %}
+
+Because what buttons are available and how they are positioned depends on whether the player is signed in or not, the game checks if the player is signed in next and if so, obtains their username.
+
+{% code title="public/game.js" %}
+```javascript
+var myUsername
+
+// Get value of "id" cookie
+const myId = document.cookie.split("; ").find((row) => row.startsWith("id=")) ?.split("=")[1];
+
+if (myId) { // "id" has a set value
+    socket.emit('fetch username', myId) // Emit event to Socket.IO server asking for username corresponding to ID in database
+} else { // "id" is empty
+    /* Create the buttons for signed out players */
+}
+
+socket.on('give username', (username) => { // Handle event emitted by Socket.IO server in response to "fetch username"
+    myUsername = username // Store username as global variable (accessible anywhere in the code)
+    /* Create the buttons for signed in players */
+}
+```
+{% endcode %}
+
+If the player is not signed in, only two buttons are to be rendered in the centre of the screen: singleplayer and sign in/out (which will have "sign in" text). They will have a small distance between one another to make it clear to the player which they are clicking.&#x20;
+
+{% code title="public/game.js" %}
+```javascript
+// Add single player button
+const singlePlayerButton = add([
+    rect(300, 50), // Rectangle of size 300x50
+    color(160, 160, 160), // Grey background
+    area(),
+    pos(center().x, center().y-30), // Slightly above the centre of the screen
+    anchor("center")
+])
+
+// Add text to single player button    
+add([
+    text("Singleplayer", {
+        size: 20
+    }),
+    color(255, 255, 255), // White text
+    area(),
+    pos(center().x, center().y-30), // Same position as button
+    anchor("center")
+])
+
+// Add sign in/out button
+const signInOutButton = add([
+    rect(300, 50),
+    color(160, 160, 160),
+    area(),
+    pos(center().x, center().y+30), // Slightly below the centre of the screen
+    anchor("center")
+])
+
+// Add text to sign in/out button
+add([
+    text("Sign In", {
+        size: 20
+    }),
+    color(255, 255, 255),
+    area(),
+    pos(center().x, center().y+30),
+    anchor("center")
+])
+```
+{% endcode %}
+
+For now, I just want a message to be outputted to the console on clicking the buttons. To accomplish this, I will use the onClick function of the button sprites. Clicking on either of the buttons will output a message to the browser console stating the intended action of the button.
+
+{% code title="public/game.js" %}
+```javascript
+singlePlayerButton.onClick(() => { // When single player button clicked
+    console.log("You clicked singleplayer!") // Brief message stating the (intended) function of the button
+})
+
+signInOutButton.onClick(() => {
+    console.log("You clicked sign in/out!")
+})
+```
+{% endcode %}
+
 ### Challenges
 
 The first issue I encountered was getting the title text in the right place. By default, Kaboom.js puts the top left corner of the sprite at the coordinates provided in the "pos" (position) property. I wanted Kaboom.js to put the centre of the sprite at these given coordinates, which saves time as I won't have to figure how many pixels I need to add/take away from the position in order to get the sprite where I want.
@@ -58,6 +169,78 @@ The solution was to change the y-coordinate of the "pos" property to move the te
 ```javascript
 pos(center().x, 50), // Display at horizontal middle, 50px away from top
 ```
+
+The second issue was due to how I setup the buttons. Initially, I declared empty variables which would later be assigned the button sprites depending on whether the player is signed in or not.&#x20;
+
+{% code title="public/game.js" %}
+```javascript
+// Button variables
+var singlePlayerButton
+var multiPlayerButton
+var leaderBoardButton
+var signInOutButton
+
+/* Other stuff */
+
+singlePlayerButton.onClick(() => { // When single player button clicked
+    console.log("You clicked singleplayer!") // Brief message stating the (intended) function of the button
+})
+    
+multiPlayerButton.onClick(() => {
+    console.log("You clicked multiplayer!")
+})
+    
+leaderBoardButton.onClick(() => {
+    console.log("You clicked leaderboard!")
+})
+    
+signInOutButton.onClick(() => {
+    console.log("You clicked sign in/out!")
+})
+```
+{% endcode %}
+
+This led to a TypeError which stated the button variables are undefined. This is because the onClick function runs before the button sprites are created, because the buttons are in a different layout depending on if the player signed in. The solution was to move the click functions so they are executed right after the button sprites are created.&#x20;
+
+{% code title="" %}
+```javascript
+if (myId) { // "id" cookie has a value
+    socket.emit('fetch username', myId) // Obtain username
+} else { // "id" cookie empty
+    /* Other stuff */
+    
+    // Only handle clicking the singleplayer and sign in buttons because the player isn't signed in
+    singlePlayerButton.onClick(() => { // When single player button clicked
+        console.log("You clicked singleplayer!") // Brief message stating the (intended) function of the button
+    })
+
+    signInOutButton.onClick(() => {
+        console.log("You clicked sign in/out!")
+    })
+}
+
+socket.on('give username', (username) => {
+    /* Other stuff */
+    
+    // Handle all button clicks
+    singlePlayerButton.onClick(() => {
+        console.log("You clicked singleplayer!")
+    })
+    
+    multiPlayerButton.onClick(() => {
+        console.log("You clicked multiplayer!")
+    })
+    
+    leaderBoardButton.onClick(() => {
+        console.log("You clicked leaderboard!")
+    })
+    
+    signInOutButton.onClick(() => {
+        console.log("You clicked sign in/out!")
+    })
+})
+```
+{% endcode %}
 
 ## Testing
 
