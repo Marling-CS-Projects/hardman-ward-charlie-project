@@ -165,7 +165,7 @@ Evidence for testing
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption><p>Test 1: Room code alert on clicking "create room"</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (18) (1).png" alt=""><figcaption><p>Test 1: Room code alert on clicking "create room"</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Test 1: Different room code alert when create room clicked in a different tab</p></figcaption></figure>
 

@@ -129,7 +129,7 @@ Evidence for testing
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>Test 1: Username (charlie) corresponding to user ID (1) stored in cookie displayed on loading page</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (2) (1).png" alt=""><figcaption><p>Test 1: Username (charlie) corresponding to user ID (1) stored in cookie displayed on loading page</p></figcaption></figure>
 
 {% embed url="https://www.youtube.com/watch?v=oZ6nmd4UTmM" %}
 Test 2: Usernames of new clients appear next to message when joining a room
