@@ -14,9 +14,11 @@ In this cycle, I will be updating the click functions configured in the previous
 
 ### Key Variables
 
-| Variable Name | Use |
-| ------------- | --- |
-|               |     |
+| Variable Name     | Use                                                                                          |
+| ----------------- | -------------------------------------------------------------------------------------------- |
+| signInOutButton   | If player signed out, go to login form. If player signed in, delete cookie and refresh page. |
+| leaderBoardButton | Only visible to signed in players, will go to leaderboard page of time records.              |
+| document.cookie   | Read and write to website cookies.                                                           |
 
 ### Pseudocode
 
@@ -50,19 +52,44 @@ At the end of this cycle, I have setup some of the button clicks on the title sc
 
 If the game detects the player is not signed in, through a lack of a value in the "id" cookie, it will setup the sign in/out button to read "sign in" and configure it to redirect to the login form that I made in [Cycle 2](cycle-2.md). Signed out users do not have access to the leaderboard or multiplayer mode, so the only other button displayed is the singleplayer button, which for now simply outputs to the browser console.
 
+{% code title="public/game.js" %}
+```javascript
+singlePlayerButton.onClick(() => { // When single player button clicked
+    console.log("You clicked singleplayer!") // Brief message stating the (intended) function of the button
+})
+
+signInOutButton.onClick(() => { // Will be "sign in" in this case
+    location.href = "/login.html" // Go to login form
+})
+```
+{% endcode %}
+
+On the other hand, if the game detects the player is signed in, through receiving the "give username" event from the Socket.IO server, the sign in/out button will read "sign out" and clicking it will delete the cookie by setting its expire date to a previous date, and reload the page which will then detect the player is signed out and display accordingly.
+
+{% code title="public/game.js" %}
+```javascript
+signInOutButton.onClick(() => { // Will be "sign out" in this case
+    document.cookie = "id=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;" // Set "id" cookie to expire in a past date, effectively deleting it
+    location.reload() // Refresh page
+})
+```
+{% endcode %}
+
+Finally, the leaderboard button, which is only visible to signed in players, will redirect the player to the leaderboard page setup in [Cycle 10](cycle-10.md). The other two buttons visible to multiplayer players, singleplayer and multiplayer, will continue to output a message to the browser console for now on being clicked.
+
 ```javascript
 singlePlayerButton.onClick(() => {
     console.log("You clicked singleplayer!")
 })
-
-    signInOutButton.onClick(() => {
-        location.href = "/login.html"
-    })
+    
+multiPlayerButton.onClick(() => {
+    console.log("You clicked multiplayer!")
+})
+    
+leaderBoardButton.onClick(() => {
+    location.href = "/leaderboard" // Redirect to leaderboard page
+})
 ```
-
-### Challenges
-
-
 
 ## Testing
 
