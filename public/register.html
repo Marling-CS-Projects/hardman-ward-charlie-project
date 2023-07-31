@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="utf-8">
+        <title>Registration</title>
+    </head>
+    <body>
+        <section>
+            <h1>Registration</h1>
+            <form action="/register" method="POST">
+                <fieldset>
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" minlength=4 required>
+                </fieldset>
+                <fieldset>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required>
+                </fieldset>
+                <fieldset>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" minlength=8 required>
+                </fieldset>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+    </body>
+</html>

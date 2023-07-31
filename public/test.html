@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="utf-8">
+        <title>SOCKET.IO ROOMS TEST</title>
+    </head>
+    <body>
+        <div class="log"></div>
+        <button class="create-room" disabled>Create Room</button>
+        <button class="join-room" disabled>Join Room</button>
+        <button class="click-me" disabled>Click Me!</button>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script>
+        const socket = io()
+
+        var myUsername
+        var myRoom
+
+        const myId = document.cookie.split("; ").find((row) => row.startsWith("id=")) ?.split("=")[1];
+        
+        socket.emit('fetch username', myId)
+
+        socket.on('give username', (username) => {
+            myUsername = username
+            alert("Your username is " + myUsername)
+
+            $('.create-room').attr('disabled', false)
+            $('.join-room').attr('disabled', false)
+        })
+
+        $('.create-room').click(() => {
+            socket.emit('create room')
+        })
+
+        socket.on('give room', (room) => {
+            myRoom = room
+            alert("Your room code is " + myRoom)
+            
+            socket.emit('join room', {
+                room: myRoom,
+                username: myUsername
+            })
+        })
+
+        $('.join-room').click(() => {
+            myRoom = prompt("Enter eight-character code of room. Case sensitive.")
+                        
+            socket.emit('join room', {
+                room: myRoom,
+                username: myUsername
+            })
+        })
+
+        socket.on('you joined room', () => {
+            $('.create-room').attr('disabled', true)
+            $('.join-room').attr('disabled', true)
+            $('.click-me').attr('disabled', false)
+        })
+
+        socket.on('new user', (username) => {
+            $('.log').html($('.log').html() + `<p><strong>${username}</strong> joined the room</p>`)
+        })
+
+        $('.click-me').click(() => {
+            socket.emit('i clicked the button', {
+                username: myUsername,
+                room: myRoom
+            })
+        })
+
+        socket.on('someone clicked the button', (username) => {
+            $('.log').html($('.log').html() + `<p><strong>${username}</strong> clicked a button</p>`)
+        })
+    </script>
+</html>
