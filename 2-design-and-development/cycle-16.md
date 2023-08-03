@@ -30,7 +30,7 @@ In this cycle, I will setup the player sprite which will be controlled by the WS
 
 ### Outcome
 
-At the end of this cycle, I have setup the basic movement controls for the player. These are vital for the game to function, however there are still some features missing. For example, in Features of Proposed Solution, I said my game will have side-scrolling, meaning the player is always centered in the screen. Additionally, there are no checks for if the player walks off the map, which currently just results in the player sprite endlessly falling. Furthermore, I have not yet added multiplayer support.
+At the end of this cycle, I have setup the basic movement controls for the player. These are vital for the game to function, however there are still some features missing. For example, in Features of Proposed Solution, I said my game will have side-scrolling, meaning the player is always centered in the screen. Additionally, there are no checks for if the player walks off the map, which currently just results in the player sprite endlessly falling. Furthermore, I have not yet added multiplayer support where there will be up to four player sprites assigned in order of joining.
 
 To start, I had to put everything in the title screen in a scene, which I named "title". Kaboom.js scenes allow for quickly changing the content on the screen without retaining anything previous, which I would want in my game.
 
@@ -38,6 +38,97 @@ To start, I had to put everything in the title screen in a scene, which I named 
 ```javascript
 scene("title", () => {
     /* Code for title screen */
+```
+{% endcode %}
+
+I modified the click function of the singleplayer button for both sign in scenarios. Previously, it would output a message to the console, but now it goes to a new scene called "main"; this will be the gameplay itself.&#x20;
+
+{% code title="public/game.js" %}
+```javascript
+singlePlayerButton.onClick(() => { // When single player button clicked
+    go("main") // Start game
+})
+```
+{% endcode %}
+
+Outside of the title scene, I must now tell the game which scene I want it to load at the start.
+
+{% code title="public/game.js" %}
+```javascript
+go("title") // Go to title screen
+```
+{% endcode %}
+
+At the start of the "main" scene, I setup what Kaboom.js calls a "level", which is essentially the environment of the game. To keep things simple to start with, I just added a single layer of ground at the bottom of the screen. Later on when I'm setting up different game levels which have different environments, I will setup more blocks, add multiple possible maps, and put in enemies; and if I have time at the end, I will make more detailed graphics.
+
+{% code title="public/game.js" %}
+```javascript
+const map = [
+    "                                          ",
+    "                                          ",
+    "                                          ",
+    "                                          ",
+    "                                          ",
+    "                                          ",
+    "                                          ",
+    "                                          ",
+    "                                          ",
+    "                                          ",
+    "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
+] // Define layout of map using symbols
+
+const config = { // Tell Kaboom.js what each symbol should be rendered as
+    // 64x64 blocks
+    tileWidth: 64,
+    tileHeight: 64,
+    tiles: { // How each symbol should be displayed
+        "G" : () => [ // Everytime "G" is specified on the map render this
+            rect(64, 64), // 64x64 cube
+            color(0, 200, 0), // Light green
+            area(),
+            body({ isStatic: true }) // Block solid but not affected by gravity
+        ]
+    }
+}
+
+addLevel(map, config)
+```
+{% endcode %}
+
+Next, I add the player. To avoid potentially wasting time, this is for now just a blue rectangle going up for now; if I have time at the end, I will draw a character. It is a dark blue rectangle of 64x128 that falls from the top left of the screen before landing on the ground. It has two JSON properties: walk\_speed and jump\_speed, which are the values for how fast the player will walk and jump when the movement controls are implemented.
+
+{% code title="public/game.js" %}
+```javascript
+const player = add([
+    rect(64, 128), // 64x128 rectangle
+    color(0, 0, 200), // Dark blue
+    area(),
+    body(), // Solid and with gravity
+    pos(0, 0), // Top left of screen
+    // Speeds to walk and jump at
+    { 
+        walk_speed: 240,
+        jump_speed: 450
+    }
+])
+```
+{% endcode %}
+
+Finally, the movement controls are A to move left, D to move right, and W to jump. These use the speeds defined in creating the player sprite. In the case of moving left, the game moves the player by negative walk speed to move leftward.
+
+{% code title="public/game.js" %}
+```javascript
+onKeyDown("a", () => { // "A" key pressed
+    player.move(-player.walk_speed, 0) // Move left by walk speed
+})
+
+onKeyDown("d", () => { // "D" key pressed
+    player.move(player.walk_speed, 0) // Move right by walk speed
+})
+
+onKeyPress("w", () => { // "W" key pressed
+    player.jump(player.jump_speed) // Jump by jump speed
+})
 ```
 {% endcode %}
 
