@@ -32,6 +32,7 @@
 * [2.2.14 Cycle 14: Title screen](2-design-and-development/cycle-14.md)
 * [2.2.15 Cycle 15: Leaderboard and sign in/out from title screen](2-design-and-development/cycle-15.md)
 * [2.2.16 Cycle 16: Player and basic movement](2-design-and-development/cycle-16.md)
+* [2.2.17 Cycle 17: Side-scrolling](2-design-and-development/cycle-17.md)
 * [Template](2-design-and-development/template.md)
 
 ## 3 Testing
