@@ -12,9 +12,9 @@ In this cycle, I will be writing a more permanent solution that will work by det
 
 * [x] Add new layers of brown "dirt" below the green (for grass) ground layer
 * [x] Detect when the player collides with a block
-* [ ] Compare the block's X coordinate with the player's to see if the player is between the horizontal beginning and end of the block
-* [ ] Then compare the block's Y coordinate with the player's to see if the player is below the top of the block
-* [ ] If both the above conditions are true, calculate the exact Y coordinate of the top of the block and move the player back up there.
+* [x] Compare the block's X coordinate with the player's to see if the player is between the horizontal beginning and end of the block
+* [x] Then compare the block's Y coordinate with the player's to see if the player is below the top of the block
+* [x] If both the above conditions are true, calculate the exact Y coordinate of the top of the block and move the player back up there.
 
 ### Usability Features
 
@@ -45,10 +45,14 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Add new layers of blocks to map with symbols for dirt and stone blocks.</td><td>Initial ground layer of grass followed by dark brown block. Some stone will be on the surface because it is too far down to see for now.</td><td>As expected</td><td>Pass</td></tr><tr><td>2</td><td>When player collides with a block, output the block's coordinates to the browser console.</td><td>Coordinates of blocks player touches constantly outputted to browser console.</td><td>As expected</td><td>Pass</td></tr></tbody></table>
+<table><thead><tr><th width="95">Test</th><th width="158">Instructions</th><th width="171">What I expect</th><th width="174">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Add new layers of blocks to map with symbols for dirt and stone blocks.</td><td>Initial ground layer of grass followed by dark brown block. Some stone will be on the surface because it is too far down to see for now.</td><td>As expected</td><td>Pass</td></tr><tr><td>2</td><td>When player collides with a block, output the block's coordinates to the browser console.</td><td>Coordinates of blocks player touches constantly outputted to browser console.</td><td>As expected</td><td>Pass</td></tr><tr><td>3</td><td>If the player is within a specified X range to be considered on the block, and below the Y coordinate of the top of the block, set the player's Y coordinate to that of the top of the block.</td><td>When the player could potentially fall through a block, they are moved back on top of it so this never happens. Player can now fall into specified holes in the map.</td><td>As expected</td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
 
 <figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption><p>Test 1: Dirt layer below the ground slightly visible</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (28).png" alt=""><figcaption><p>Test 2: Coordinates of blocks outputted to console when the player touches them</p></figcaption></figure>
+
+{% embed url="https://youtu.be/eUGDifkoRqI" %}
+Test 3: If player goes below top of block they are standing on, they are moved back on top of the block to prevent falling through
+{% endembed %}
