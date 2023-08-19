@@ -14,7 +14,7 @@ In this cycle, I will be creating the screen that shows on clicking the "multipl
 * [x] Render multiplayer code input box as a rectangle with a grey outline.
 * [x] Create text centered in multiplayer code input for displaying the code, default text is a hint on what to type inside.
 * [x] Detect pressing of letter and number keys and add the character to the multiplayer code and update the text.
-* [ ] Detect pressing of backspace key and remove the last character from the multiplayer code and update the text.
+* [x] Detect pressing of backspace key and remove the last character from the multiplayer code and update the text.
 * [ ] Render "Join Game" and "Start Game" buttons below the input box.
 
 ### Usability Features
@@ -74,4 +74,8 @@ Test 7: Game does not let player enter more than 8 characters as multiplayer cod
 
 {% embed url="https://youtu.be/hgjKA-fkPdE" %}
 Test 8: Nothing happens on pressing backspace to remove last entered character of multiplayer game code
+{% endembed %}
+
+{% embed url="https://youtu.be/AxafHz9op4A" %}
+Test 9: Pressing backspace deletes the last character of the multiplayer code
 {% endembed %}
