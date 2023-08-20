@@ -382,22 +382,22 @@ Evidence for testing
 
 <figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption><p>Test 1: Light blue area of size 1280x720</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (2) (2).png" alt=""><figcaption><p>Test 2: Title text is cut off</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (2) (1).png" alt=""><figcaption><p>Test 2: Title text is cut off</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Test 3: Title text now appears properly</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (4).png" alt=""><figcaption><p>Test 3: Title text now appears properly</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>Test 4: Browser alert to signed out players</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption><p>Test 5: Browser alert containing username for signed in players</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Test 6: All four menu buttons appear on title screen when signed in</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (3).png" alt=""><figcaption><p>Test 6: All four menu buttons appear on title screen when signed in</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1) (3).png" alt=""><figcaption><p>Test 7: For signed out users, only the singleplayer and sign in buttons appear</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (3) (1).png" alt=""><figcaption><p>Test 7: For signed out users, only the singleplayer and sign in buttons appear</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Test 8: TypeError cannot read properties of undefined (reading 'onClick')</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (2).png" alt=""><figcaption><p>Test 8: TypeError cannot read properties of undefined (reading 'onClick')</p></figcaption></figure>
 
 {% embed url="https://youtu.be/ULO3KcZr2rU" %}
 Test 9: Short message outputted to console on clicking a button
 {% endembed %}
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Test 10: Username displayed below buttons when the player is signed in</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>Test 10: Username displayed below buttons when the player is signed in</p></figcaption></figure>

@@ -15,7 +15,7 @@ In this cycle, I will be creating the screen that shows on clicking the "multipl
 * [x] Create text centered in multiplayer code input for displaying the code, default text is a hint on what to type inside.
 * [x] Detect pressing of letter and number keys and add the character to the multiplayer code and update the text.
 * [x] Detect pressing of backspace key and remove the last character from the multiplayer code and update the text.
-* [ ] Render "Join Game" and "Start Game" buttons below the input box.
+* [x] Render "Join Game" and "Start Game" buttons below the input box.
 
 ### Usability Features
 

@@ -35,7 +35,9 @@
 * [2.2.17 Cycle 17: Side-scrolling](2-design-and-development/cycle-17.md)
 * [2.2.18 Cycle 18: Permanent solution to ground falling bug](2-design-and-development/cycle-18.md)
 * [2.2.19 Cycle 19: Multiplayer game screen](2-design-and-development/cycle-19.md)
-* [Template](2-design-and-development/template.md)
+* [2.2.20 Cycle 20: Create multiplayer room](2-design-and-development/cycle-20.md)
+* [Copy of Copy of Template](2-design-and-development/template.md)
+* [Template](2-design-and-development/template-1.md)
 
 ## 3 Testing
 

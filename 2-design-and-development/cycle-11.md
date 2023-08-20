@@ -162,7 +162,7 @@ Evidence for testing
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>Test 1: UUIDv4-generated ID displayed as popup on new connection</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption><p>Test 1: UUIDv4-generated ID displayed as popup on new connection</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (18) (1) (1).png" alt=""><figcaption><p>Test 2: Client #1 sees join messages for clients #2 and #3</p></figcaption></figure>
 
@@ -170,7 +170,7 @@ Evidence for testing
 
 <figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption><p>Test 2: Client #3 does not see any join messages as there have been no more new connections since joining</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Test 3: Client #1 gets messages on clients #2 and #3 clicking the button</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Test 3: Client #1 gets messages on clients #2 and #3 clicking the button</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption><p>Test 3: Client #2 gets messages on clients #1 and #3 clicking the button</p></figcaption></figure>
 
