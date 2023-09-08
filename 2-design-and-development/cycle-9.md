@@ -95,4 +95,4 @@ Evidence for testing
 
 <figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>Test record values set in test 2</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Records set in test 2 outputted in HH:MM:SS format in test 3</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Records set in test 2 outputted in HH:MM:SS format in test 3</p></figcaption></figure>

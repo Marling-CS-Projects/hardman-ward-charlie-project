@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Pixel Quest](README.md)
+* [Pixel Racer](README.md)
 * [References](references.md)
 
 ## 1 Analysis

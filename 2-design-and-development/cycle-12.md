@@ -167,7 +167,7 @@ Evidence for testing
 
 <figure><img src="../.gitbook/assets/image (18) (1).png" alt=""><figcaption><p>Test 1: Room code alert on clicking "create room"</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Test 1: Different room code alert when create room clicked in a different tab</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Test 1: Different room code alert when create room clicked in a different tab</p></figcaption></figure>
 
 {% embed url="https://www.youtube.com/watch?v=-i06ml-WlY4" %}
 Test 2: Join message only displayed to other clients in the same room

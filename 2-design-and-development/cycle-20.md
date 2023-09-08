@@ -12,7 +12,7 @@ I have decided to change the text on the buttons on the multiplayer screen. They
 
 **Here it is after the change:**
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Objectives
 
@@ -52,11 +52,11 @@ Evidence for testing
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Test 1: Clicking create room button goes to "waiting" scene</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Test 1: Clicking create room button goes to "waiting" scene</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Test 2: Room codes output to Node.js log on clicking "Create Room"</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Test 2: Room codes output to Node.js log on clicking "Create Room"</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Test 3: Room code displayed on screen after creating room</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Test 3: Room code displayed on screen after creating room</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Test 4: Start Game and Leave Room buttons displayed near the bottom of the screen</p></figcaption></figure>
 
