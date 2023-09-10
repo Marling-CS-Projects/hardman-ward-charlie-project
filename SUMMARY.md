@@ -19,6 +19,7 @@
 * [2.2.1 Cycle 1: Setup database](2-design-and-development/2.2.1-cycle-1.md)
 * [2.2.2 Cycle 2: User account registration](2-design-and-development/2.2.2-cycle-2.md)
 * [2.2.3 Cycle 3: User authentication and login](2-design-and-development/2.2.3-cycle-3.md)
+* [2.2.4 Cycle 4: Check if player is signed in](2-design-and-development/2.2.4-cycle-4.md)
 * [Template](2-design-and-development/template.md)
 
 ## 3 Testing
