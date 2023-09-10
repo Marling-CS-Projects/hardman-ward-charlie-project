@@ -20,6 +20,13 @@
 * [2.2.2 Cycle 2: User account registration](2-design-and-development/2.2.2-cycle-2.md)
 * [2.2.3 Cycle 3: User authentication and login](2-design-and-development/2.2.3-cycle-3.md)
 * [2.2.4 Cycle 4: Check if player is signed in](2-design-and-development/2.2.4-cycle-4.md)
+* [2.2.5 Cycle 5: Title screen](2-design-and-development/2.2.5-cycle-5.md)
+* [2.2.6 Cycle 6: Joining and creating rooms](2-design-and-development/2.2.6-cycle-6.md)
+* [2.2.7 Cycle 7: Waiting for players screen](2-design-and-development/2.2.7-cycle-7.md)
+* [2.2.8 Cycle 8: World generation and rendering](2-design-and-development/2.2.8-cycle-8.md)
+* [2.2.9 Cycle 9: Car movement and scrolling](2-design-and-development/2.2.9-cycle-9.md)
+* [2.2.10 Cycle 10: Race countdown](2-design-and-development/2.2.10-cycle-10.md)
+* [2.2.11 Cycle 11: Stopwatch](2-design-and-development/2.2.11-cycle-11.md)
 * [Template](2-design-and-development/template.md)
 
 ## 3 Testing
