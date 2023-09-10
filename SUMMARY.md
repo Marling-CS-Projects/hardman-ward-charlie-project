@@ -16,28 +16,10 @@
 ## 2 Design and Development
 
 * [2.1 Design Frame](2-design-and-development/systems-diagram.md)
-* [2.2.1 Cycle 1: Configure database](2-design-and-development/cycle-1.md)
-* [2.2.2 Cycle 2: Login/registration pages](2-design-and-development/cycle-2.md)
-* [2.2.3 Cycle 3: Hashing passwords with bcrypt](2-design-and-development/cycle-3.md)
-* [2.2.4 Cycle 4: Receive POST requests](2-design-and-development/cycle-4.md)
-* [2.2.5 Cycle 5: Reading and saving cookies](2-design-and-development/cycle-5.md)
-* [2.2.6 Cycle 6: Working registration form](2-design-and-development/cycle-6.md)
-* [2.2.7 Cycle 7: Working login](2-design-and-development/cycle-7.md)
-* [2.2.8 Cycle 8: Convert seconds to HH:MM:SS](2-design-and-development/cycle-8.md)
-* [2.2.9 Cycle 9: Updating and reading time records](2-design-and-development/cycle-9.md)
-* [2.2.10 Cycle 10: Leaderboard page](2-design-and-development/cycle-10.md)
-* [2.2.11 Cycle 11: Client communication using Socket.IO](2-design-and-development/cycle-11.md)
-* [2.2.12 Cycle 12: Socket.IO rooms](2-design-and-development/cycle-12.md)
-* [2.2.13 Cycle 13: Integrating login system with Socket.IO](2-design-and-development/cycle-13.md)
-* [2.2.14 Cycle 14: Title screen](2-design-and-development/cycle-14.md)
-* [2.2.15 Cycle 15: Leaderboard and sign in/out from title screen](2-design-and-development/cycle-15.md)
-* [2.2.16 Cycle 16: Player and basic movement](2-design-and-development/cycle-16.md)
-* [2.2.17 Cycle 17: Side-scrolling](2-design-and-development/cycle-17.md)
-* [2.2.18 Cycle 18: Permanent solution to ground falling bug](2-design-and-development/cycle-18.md)
-* [2.2.19 Cycle 19: Multiplayer game screen](2-design-and-development/cycle-19.md)
-* [2.2.20 Cycle 20: Create multiplayer room](2-design-and-development/cycle-20.md)
-* [Copy of Copy of Template](2-design-and-development/template.md)
-* [Template](2-design-and-development/template-1.md)
+* [2.2.1 Cycle 1: Setup database](2-design-and-development/2.2.1-cycle-1.md)
+* [2.2.2 Cycle 2: User account registration](2-design-and-development/2.2.2-cycle-2.md)
+* [2.2.3 Cycle 3: User authentication and login](2-design-and-development/2.2.3-cycle-3.md)
+* [Template](2-design-and-development/template.md)
 
 ## 3 Testing
 
