@@ -27,6 +27,18 @@
 * [2.2.9 Cycle 9: Car movement and scrolling](2-design-and-development/2.2.9-cycle-9.md)
 * [2.2.10 Cycle 10: Race countdown](2-design-and-development/2.2.10-cycle-10.md)
 * [2.2.11 Cycle 11: Stopwatch](2-design-and-development/2.2.11-cycle-11.md)
+* [2.2.12 Cycle 12: Finish line](2-design-and-development/2.2.12-cycle-12.md)
+* [2.2.13 Cycle 13: Position indicator](2-design-and-development/2.2.13-cycle-13.md)
+* [2.2.14 Cycle 14: Getting powerups from chest](2-design-and-development/2.2.14-cycle-14.md)
+* [2.2.15 Cycle 15: Health bar](2-design-and-development/2.2.15-cycle-15.md)
+* [2.2.16 Cycle 16: Fireball](2-design-and-development/2.2.16-cycle-16.md)
+* [2.2.17 Cycle 17: TNT](2-design-and-development/2.2.17-cycle-17.md)
+* [2.2.18 Cycle 18: Potion effects](2-design-and-development/2.2.18-cycle-18.md)
+* [2.2.19 Cycle 19: Monster Army and behaviour](2-design-and-development/2.2.19-cycle-19.md)
+* [2.2.20 Cycle 20: Level leaderboard](2-design-and-development/2.2.20-cycle-20.md)
+* [2.2.21 Cycle 21: Progression onto next level](2-design-and-development/2.2.21-cycle-21.md)
+* [2.2.22 Cycle 22: Final leaderboard](2-design-and-development/2.2.22-cycle-22.md)
+* [2.2.23 Cycle 23: Fixing bugs and improving stability](2-design-and-development/2.2.23-cycle-23.md)
 * [Template](2-design-and-development/template.md)
 
 ## 3 Testing
