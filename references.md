@@ -26,3 +26,12 @@
 24. Schramm, M. (2017). _Minecraft: Pocket Edition out on iOS today_. \[online] Engadget. Available at: [https://www.engadget.com/2011-11-16-minecraft-pocket-edition-out-on-ios-today.html](https://www.engadget.com/2011-11-16-minecraft-pocket-edition-out-on-ios-today.html)
 25. Davies, M. (2017). _Upgrade for Windows Phone players!_ \[online] Minecraft.net. Available at: [https://www.minecraft.net/en-us/article/upgrade-windows-phone-players](https://www.minecraft.net/en-us/article/upgrade-windows-phone-players)
 26. Upton, L. (2014). _Using Minecraft: Raspberry Pi Edition to get kids computing_. \[online] Raspberry Pi Foundation. Available at: [https://www.raspberrypi.org/blog/using-minecraft-raspberry-pi-edition-to-get-kids-computing](https://www.raspberrypi.org/blog/using-minecraft-raspberry-pi-edition-to-get-kids-computing)
+27. DigMinecraft. (2015). _Zombie in Minecraft_. \[online] Available at: [https://www.digminecraft.com/mobs/zombie.php](https://www.digminecraft.com/mobs/zombie.php)
+28. Game Guide. (2012). _Minecraft Zombies_. \[online] Available at: [https://www.game.guide/minecraft-zombies](https://www.game.guide/minecraft-zombies)
+29. Thakur, K. (2022). _All you need to know about the Minecraft Skeleton_. \[online] WePC. Available at: [https://www.wepc.com/gaming/minecraft/all-you-need-to-know-about-the-minecraft-skeleton](https://www.wepc.com/gaming/minecraft/all-you-need-to-know-about-the-minecraft-skeleton)
+30. IGN. (n.d.). _Skeleton - Minecraft Wiki Guide_. \[online] Available at: [https://www.ign.com/wikis/minecraft/Skeleton](https://www.ign.com/wikis/minecraft/Skeleton)
+31. Hillier, B. (2014). _Happy birthday to Minecraft’s Creepers!_ \[online] VG247. Available at: [https://www.vg247.com/minecraft-creepers-happy-birthday](https://www.vg247.com/minecraft-creepers-happy-birthday)
+32. Brown, A. (2021). _How Minecraft Creepers Originated From A Pig Accident_. \[online] ScreenRant. Available at: [https://screenrant.com/minecraft-creeper-origin-design-how-avoid-mob-attack](https://screenrant.com/minecraft-creeper-origin-design-how-avoid-mob-attack)
+33. Geere, D. (2021). _Around the Block: Warped Forest_. \[online] Minecraft.net. Available at: [https://www.minecraft.net/en-us/article/around-block--warped-forest](https://www.minecraft.net/en-us/article/around-block--warped-forest)
+34. wikiHow. (2021). _How to Avoid an Enderman Attack in Minecraft: 3 Steps_. \[online] Available at: [https://www.wikihow.com/Avoid-an-Enderman-Attack-in-Minecraft](https://www.wikihow.com/Avoid-an-Enderman-Attack-in-Minecraft)
+35.
