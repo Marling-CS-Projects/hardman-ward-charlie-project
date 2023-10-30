@@ -12,31 +12,31 @@ Usability is an important aspect to my game as I want it to be accessible to all
 
 ### Effective
 
-Users can achieve the goal with completeness and accuracy. To do this, I will make it easy for the players to realise that they need to reach a goal in order to complete a level. I will make this goal clear to see so there is no confusion over where the players need to go.
+Users can achieve the goal with completeness and accuracy. To do this, I will implement a smooth transition between levels and make the&#x20;
 
 #### Aims
 
-* Create a clear goal to reach to determine the end of a level
-* Create a clear goal for any multiplayer modes
+*
 
 ### Efficiency
 
-The speed and accuracy to which a user can complete the goal. To do this, I will create a menu system which is easy to navigate through in order for to find what you are looking for. The information which is more important can be found with less clicks.
+The speed and accuracy to which a user can complete the goal. To do this, I will add power-ups to my game that help the player if they are at a disadvantage to their opponents, such as if they are far behind. I will also make sure the controls of the game are easy for the player to pick up by using WSAD which is common in many PC games.
 
 #### Aims
 
-* Create a menu system that is quick and easy to navigate through
-* Create a controls system that isn't too complicated but allows the player to do multiple actions
+* Implement power-ups that assist the player in getting ahead of their opponents.
+* Implement controls that will be familiar to many players and easy to pick up.
+* Create the title screen to be clear about what the player needs to do in order to play.
 
 ### Engaging
 
-The solution is engaging for the user to use. To do this, I will create 5 levels and an online multiplayer mode to keep the players engaged and allow them to have fun while playing the game. Using vector style art will also make the game nicer to look at than blocks, so will draw more people in, keeping them engaged.
+The solution is engaging for the user to use. To do this, I will add in 4 levels with random placing of props and chests to keep the players engaged and make them want to play again. Additionally, my game will be multiplayer allowing the player to invite up to four others to play with them.
 
 #### Aims
 
-* Create a series of levels to work through
-* Create a multiplayer mode to play
-* Incorporate a style of game art the suits the game
+* Add four levels with a different environment to each other.
+* Generate the levels each time with random placement of props and chests.
+* Implement online multiplayer to let players play together.
 
 ### Error Tolerant
 
@@ -44,17 +44,18 @@ The solution should have as few errors as possible and if one does occur, it sho
 
 #### Aims
 
-* The game doesn't crash
-* The game does not contain any bugs that damage the user experience
+* The game should not crash.
+* The game should not regularly lag.
+* The game should not contain any bugs that damage the user experience
 
 ### Easy To Learn
 
-The solution should be easy to use and not be over complicated. To do this, I will create simple controls for the game. I will make sure that no more controls are added than are needed in order to keep them as simple as possible for the players.
+The solution should be easy to use and not be over complicated. To do this, I will implement the WSAD control system as this is familiar to many PC gamers and therefore will be easy to pick up. I will also make sure the forms for registering or logging into an account are user friendly.
 
 #### Aims
 
-* Create a list of controls for the game
-* Create an in-level guide that helps players learn how to play the game
+* Use WSAD to move around as these are familiar to many players.
+* Use HTML and CSS stylesheets to make the login/registration forms user friendly.
 
 ## Pseudocode for the Game
 
