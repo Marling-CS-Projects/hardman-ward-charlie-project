@@ -12,11 +12,13 @@ Usability is an important aspect to my game as I want it to be accessible to all
 
 ### Effective
 
-Users can achieve the goal with completeness and accuracy. To do this, I will implement a smooth transition between levels and make the&#x20;
+Users can achieve the goal with completeness and accuracy. To do this, I will implement a smooth transition between levels, briefly displaying leaderboards of performance in that level inbetween, so players can easily progress through the game. Additionally, I will add combat powerups that players can use against one another with the purpose of distraction.
 
 #### Aims
 
-*
+* Add combat power-ups that are effective in distracting other players.
+* Implement a smooth transition between different levels so the players can progress.
+* Make the options for joining an existing room or creating a new one for multiplayer clear.
 
 ### Efficiency
 
@@ -61,51 +63,35 @@ The solution should be easy to use and not be over complicated. To do this, I wi
 
 ### Pseudocode for game
 
-This is the basic layout of the object to store the details of the game. This will be what is rendered as it will inherit all important code for the scenes.
+This is the basic layout of the index file of the game using Kaboom.js. This will link all the scenes and graphics files for sprites. It will also run an initial check on whether the player is signed in and show them a scene depending on the result.
 
+{% code title="index.js" %}
 ```
-object Game
-    type: Phaser
-    parent: id of HTML element
-    width: width
-    height: height
-    physics: set up for physics
-    scenes: add all menus, levels and other scenes
-end object
+kaboom({
+    background: lightblue
+})
 
-render Game to HTML web page
+root("graphics")
+sprite spriteName "spriteName.png"
+...
+
+scene title titleScene
+scene login info loginInfoScene
+scene multiplayer multiplayerScene
+scene wait waitScene
+scene level levelScene
+scene leaderboard leaderboardScene
+scene final leaderboard finalLeaderboardScene
+
+session = cookie session
+
+send_request(type POST, url "/get-username", data session),
+    successful: func (res):
+        username = res
+        
+         go title
+         
+     err: func():
+         go login info
 ```
-
-### Pseudocode for a level
-
-This shows the basic layout of code for a Phaser scene. It shows where each task will be executed.
-
-```
-class Level extends Phaser Scene
-
-    procedure preload
-        load all sprites and music
-    end procedure
-    
-    procedure create
-        start music
-        draw background
-        create players
-        create platforms
-        create puzzle elements
-        create enemies
-        create obstacles
-        create finishing position
-        create key bindings
-    end procedure
-    
-    procedure update
-        handle key presses
-        move player
-        move interactable objects
-        update animations
-        check if player at exit
-    end procedure
-    
-end class
-```
+{% endcode %}
