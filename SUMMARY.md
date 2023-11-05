@@ -38,7 +38,7 @@
 * [2.2.20 Cycle 20: Monster Army and behaviour](2-design-and-development/2.2.20-cycle-20.md)
 * [2.2.21 Cycle 21: Level leaderboard](2-design-and-development/2.2.21-cycle-21.md)
 * [2.2.22 Cycle 22: Final leaderboard](2-design-and-development/2.2.22-cycle-22.md)
-* [2.2.23 Cycle 23: Fixing bugs and improving stability](2-design-and-development/2.2.23-cycle-23.md)
+* [2.2.23 Cycle 23: Small changes](2-design-and-development/2.2.23-cycle-23.md)
 * [Template](2-design-and-development/template.md)
 
 ## 3 Testing
